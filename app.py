@@ -45,6 +45,10 @@ def instructorprofile():
 @app.route("/questionbank")
 def questionbank():
     return render_template("questionbank.html")
+
+@app.route("/studentprofile")
+def studentprofile():
+    return render_template("studentprofile.html", fn=user.getFname(),ln=user.getLname(),email=user.getEmail(),pn=user.getPhoneNumber(), pw=user.getPassword())
     
 if __name__ == "__main__":
     app.run()
