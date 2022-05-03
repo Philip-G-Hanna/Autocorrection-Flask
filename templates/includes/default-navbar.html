@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Navbar</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="static/css/styles.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet">
+    </head>
+    <body>
+      <header>
+          <nav>
+              <ul class="nav__links">
+                <li><strong><li style="color:white;">CORRECTA</li></strong></li>
+                <li><a href="/" class="w3-bar-item w3-button"><i class="fa fa-home "></i> Home</a></li>
+                <li><a href="#contact.php" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> Contact</a></li>
+                <li><a href="control.php" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> Join us</a></li>
+                <li><a href="/signin" class="w3-bar-item w3-button w3-hide-small">Signin</a></li>
+                <li><a href="/signup" class="w3-bar-item w3-button w3-hide-small">Signup</a></li>
+              </ul>
+          </nav>
+          <!--<a class="cta" href="#">Contact</a>-->
+          <p class="menu cta">Menu</p>
+      </header>
+        <div class="overlay">
+            <a class="close">&times;</a>
+            <div class="overlay__content">
+              <strong><li style="color:white;">CORRECTA</li></strong>
+              <a href="/" class="w3-bar-item w3-button"><i class="fa fa-home "></i> Home</a>
+              <a href="#contact.php" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> Contact</a>
+              <a href="control.php" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> Join us</a>
+              <a href="/signin" class="w3-bar-item w3-button w3-hide-small">Signin</a>
+              <a href="/signup" class="w3-bar-item w3-button w3-hide-small">Signup</a>
+            </div>
+        </div>
+        <script type="text/javascript" src="/static/js/mobile.js"></script>
+        {% block content %}{% endblock %}
+    </body>
+</html>

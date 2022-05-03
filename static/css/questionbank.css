@@ -1,0 +1,67 @@
+    body {
+        width: 100%;
+        overflow: hidden;
+        font-family: "montserrat", sans-serif;
+        background-image: url("pictures/28.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 725px;
+        text-align: center;
+        margin: 0 auto;
+        margin-top: -16px;
+    }
+    
+    .register {
+        overflow-y: scroll;
+        overflow-y: scroll;
+        transform: translate(156%, 13%);
+        background-color: #F0E8D7;
+        width: 38%;
+        height: 80%;
+        text-align: center;
+    }
+    
+    .section {
+        transform: translate(-53%, 0%);
+    }
+    
+    img {
+        width: 30%;
+        height: 60%;
+    }
+    
+    .register input[type="text"] {
+        padding: 20px;
+        border: none;
+        border-bottom: 1px solid #44713D;
+        background: transparent;
+        outline: none;
+        height: 10%;
+        width: 80%;
+        color: #44713D;
+    }
+    
+    span {
+        color: #35611C;
+        font-size: 30px;
+        cursor: pointer;
+    }
+    
+    .register input[type="submit"] {
+        border: none;
+        outline: none;
+        height: 10%;
+        width: 50%;
+        background: white;
+        color: black;
+        font-size: 18px;
+        transform: translate(0%, 40%);
+        border-radius: 30px;
+    }
+    
+    .register input[type="submit"]:hover {
+        background-color: #35611C;
+        color: black;
+        transition-duration: 0.5s;
+    }

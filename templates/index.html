@@ -1,0 +1,42 @@
+{%if utype == 1 %}
+    {% include 'includes/student-navbar.html' %}
+
+{%elif utype == 2 %}
+    {% include 'includes/instructor-navbar.html' %}
+
+{%else %}
+    {% include 'includes/default-navbar.html' %}
+{% endif %}
+
+
+{% extends 'layouts/userLayout.html' %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <style>
+        body 
+		{ 
+			background-image: url('static/images/img_girl.jpg');
+            opacity: 0.5;
+    		background-size: cover;
+    		height: 100vh; /*Relative to 1% of the height of the viewport*/
+    		width:100vw; /*Relative to 1% of the width of the viewport*/
+    		padding:0;
+    		margin:0;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+    		font-family: 'Rajdhani-Regular', sans-serif;
+    		color:white;
+        }
+    </style>
+</head>
+<body></body>
+<div class="d-flex align-items-center" style="min-height: 100vh">
+    <p style="color: black; font-size: large;" ><b>
+        After the pandemic education became online. this made doctors and students find difficulty in learning and exams became a problem.
+    </b></p>
+</div>
+{% endblock %}
+</body>
