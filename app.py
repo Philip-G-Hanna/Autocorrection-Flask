@@ -42,6 +42,10 @@ def index():
 def instructorprofile():
     return render_template("instructorprofile.html", fn=user.getFname(),ln=user.getLname(),email=user.getEmail(),pn=user.getPhoneNumber())
 
+@app.route("/studentprofile")
+def studentprofile():
+    return render_template("studentprofile.html")
+
 @app.route("/questionbank")
 def questionbank():
     return render_template("questionbank.html")
