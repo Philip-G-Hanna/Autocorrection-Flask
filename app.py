@@ -1,4 +1,5 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 from flask import Flask
 from flask import session
 import os
@@ -12,6 +13,8 @@ app.secret_key = os.urandom(24)
 def signin():
     return userController.signin()
 =======
+=======
+>>>>>>> Stashed changes
 from flask import Flask, redirect, render_template, request, url_for
 from flask import session
 import os
@@ -55,9 +58,15 @@ def instructor_feedback():
     return userController.instructor_feedback()
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 @app.route("/profile")
 def profile():
     return userController.profile()
+=======
+# @app.route("/studentprofile")
+# def studentprofile():
+#     return render_template("studentprofile.html")
+>>>>>>> Stashed changes
 =======
 # @app.route("/studentprofile")
 # def studentprofile():
@@ -76,6 +85,7 @@ def sendemail():
 def logout():
     session.pop('id', None)
     return userController.signin()
+<<<<<<< Updated upstream
 
 <<<<<<< Updated upstream
 =======
@@ -83,11 +93,16 @@ def logout():
 def logout():
     session.pop('id', None)
     return userController.signin()
+=======
+>>>>>>> Stashed changes
     
 @app.route("/studentprofile")
 def studentprofile():
     return render_template("studentprofile.html", fn=user.getFname(),ln=user.getLname(),email=user.getEmail(),pn=user.getPhoneNumber(), pw=user.getPassword())
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 if __name__ == "__main__":
     app.run()

@@ -77,9 +77,12 @@ class UserController:
         return render_template("profile.html", fn=self.__user.getFname(),ln=self.__user.getLname(),email=self.__user.getEmail(),pn=self.__user.getPhoneNumber(), utype=self.__user.getType())
     
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     def instructor_feedback(self):
         return render_template("instructor_feedback.html", fn=self.__user.getFname(),ln=self.__user.getLname(), utype=self.__user.getType())    
     
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
     def questionbank(self):
