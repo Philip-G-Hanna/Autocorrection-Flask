@@ -1,19 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="static/css/navbar.css">
-</head>
-<body>
-
-<div class="topnav">
-  <a><strong style="color: white;">CORRECTA</strong></a>
-  <a href="/" class="w3-bar-item w3-button"><i class="fa fa-home "></i>Home</a>
-  <a href="#contact.php" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> Contact</a>
-  <a href="/signup" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> Join us</a>
-  <a href="/signin" class="w3-bar-item w3-button w3-hide-small">Sign in</a>
-  <a href="/signup" class="w3-bar-item w3-button w3-hide-small">Sign up</a>
-</div>
-{% block content %}{% endblock %}
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"  content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="static/css/navbar.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+    <body>
+      <div class="w3-top">
+        <div class="w3-bar" id="myNavbar">
+          <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+            <i class="fa fa-bars"></i>
+          </a>
+          <a href="/" class="w3-bar-item w3-button"><i class="fa fa-home "></i>HOME</a>
+          <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i>CONTACT</a>
+          <a href="/signin" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i>Join us</a>
+          <a href="/signin" class="w3-bar-item w3-button w3-hide-small pull-right">Signin</a>
+          <a href="/signup" class="w3-bar-item w3-button w3-hide-small pull-right">Signup</a>
+        
+        </div>
+      </div>
+        {% block content %}{% endblock %}
+  </body>
 </html>
+
+

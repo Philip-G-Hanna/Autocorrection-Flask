@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html>
+  <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="static/css/navbar.css">
     <meta name="viewport"  content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="static/css/navbar.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
     <body>
       <div class="w3-top">
         <div class="w3-bar" id="myNavbar">
           <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
             <i class="fa fa-bars"></i>
-          </a>     
-          <a href="/" class="w3-bar-item w3-button"><i class="fa fa-home "></i> Home</a>
-          <a href="studentprofile" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> Profile</a>
-          <a href="courses" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> Courses</a>
-          <a href="score" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-graduation-cap"></i> Transcript</a>
-          <a href="/logout" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> Log out</a>
+          </a>
+          <a href="homepage.php" class="w3-bar-item w3-button"><i class="fa fa-home "></i> HOME</a>
+          <a href="courses.php" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> Courses</a>
+          <a href="Score.php" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-graduation-cap"></i> Transcript</a>
+          <a href="profile" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> Profile</a>
+          <a href="/logout" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> logout</a>
         </div>
       </div>
         {% block content %}{% endblock %}

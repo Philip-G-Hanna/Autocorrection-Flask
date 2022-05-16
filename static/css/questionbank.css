@@ -1,4 +1,7 @@
-    body {
+html {
+    scroll-behavior: smooth;
+  }
+  body {
         width: 100%;
         overflow: hidden;
         font-family: "montserrat", sans-serif;

@@ -37,6 +37,16 @@ class User:
 
     def getType(self):
         return self.__type
+    
+    def exist_account(self, email):
+        self.__email = email
+
+        sql = """SELECT * FROM user WHERE email = %s"""
+        self.__cursor.execute(sql, (self.__email,))
+        result = self.__cursor.fetchone()
+        self.__conn.commit()
+        print("exist_account", result)
+        return result  
 
     def addUser(self, fname, lname, email, pn, password, dob):
         self.__fname = fname
@@ -68,5 +78,5 @@ class User:
             self.__lname = result[2]
             self.__type  = result[5]
             self.__dob = result[7]
-            self.__phoneNumber = result[9]
+            self.__phoneNumber = result[8]
         return result
