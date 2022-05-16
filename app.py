@@ -72,12 +72,7 @@ def questionbank():
 @app.route("/sendemail", methods=['POST', 'GET'])
 def sendemail():
     return userController.sendemail()
-
-@app.route("/logout")
-def logout():
-    session.pop('id', None)
-    return userController.signin()
-
+    
 @app.route("/transcript")
 def transcript():
     return userController.transcript()

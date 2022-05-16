@@ -33,7 +33,7 @@ class transcript:
         return self.__user_id
 
     def transcript(self,user_id):
-        sql = """SELECT * FROM transcript WHERE id = """+str(user_id)+""""""
+        sql = """SELECT * FROM transcript WHERE user_id = """+str(user_id)+""""""
         
         self.__cursor.execute(sql, (self.__user_id))
         result = self.__cursor.fetchall()
