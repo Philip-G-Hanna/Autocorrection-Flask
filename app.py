@@ -1,4 +1,6 @@
 from flask import Flask
+from flask import  redirect, render_template, request, url_for
+
 from flask import session
 import os
 from controllers.userController import UserController
@@ -39,6 +41,15 @@ def sendemail():
 def logout():
     session.pop('id', None)
     return userController.signin()
+
+@app.route("/transcript")
+def transcript():
+    return userController.transcript()
+
+@app.route("/instructorCourses")
+def instructorCourses():
+    return userController.InstructorCoursess()
+
 
 if __name__ == "__main__":
     app.run()

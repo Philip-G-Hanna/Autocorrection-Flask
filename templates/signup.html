@@ -1,48 +1,50 @@
-{% include 'includes/default-navbar.html' %}
+{% include 'includes/default-navbar.html' %} {% extends 'layouts/userLayout.html' %} {% block title %}Signup{% endblock %} {% block content %}
 
-{% extends 'layouts/userLayout.html' %}
-{% block title %}Signup{% endblock %}
-
-{% block content %}
 <head>
-    <link rel="stylesheet" href="static/css/login_styles.css"> <!-- hena by linked styling bt3 sign up -->
+    <link rel="stylesheet" href="static/css/login_styles.css">
+    <!-- hena by linked styling bt3 sign up -->
 </head>
-    
+
 <body>
-    
+
     <div class="container">
-      <section id="content">
-          <h1>signup Form</h1>
-          {% for error in errormsg %}
+        <section id="content">
+            <h1>signup Form</h1>
+            {% for error in errormsg %}
             <div>
                 {{error}}
             </div>
-          {% endfor %}
-    
-        <!-- sign-up form -->
-        <form  class="/signup"  method="POST">
-    
-            <input class="styles" type="text" name="fname" value=""required placeholder="Enter your First name..">
-           
-    
-            <input class="styles" type="text" name="lname" value=""required placeholder="Enter your Last name..">
-            
-    
-            <input class="styles" type="text" name="email" value="" required placeholder="Enter your email..">
-            
-            <input class="styles" type="text" name="phone" value="" required placeholder="Enter your phonenumber..">
-           
-            <input type="password" name="password" placeholder="Password" required="" id="password" />
-            
-         <br>
-          <input type="password" name="rpassword" placeholder=" Re-type your password.." required="" id="password" />
-           
-    
-            <input style ="width:30%;" class="styles" type="date" name="age" ><br>
+            {% endfor %}
 
-            <div>
-            <input type="submit" value="SignUp" name="submit">
-          </div>
-        </form> 
+            <!-- sign-up form -->
+            <form class="/signup" method="POST">
+
+                <input class="styles" type="text" name="fname" value="" required placeholder="Enter your First name..">
+
+
+                <input class="styles" type="text" name="lname" value="" required placeholder="Enter your Last name..">
+
+
+                <input class="styles" type="text" name="email" value="" required placeholder="Enter your email..">
+
+                <input class="styles" type="text" name="phone" value="" required placeholder="Enter your phonenumber..">
+
+                <input type="password" name="password" placeholder="Password" required="" id="password" />
+
+                <br>
+                <input type="password" name="rpassword" placeholder=" Re-type your password.." required="" id="password" />
+                <input type="radio" name="gender" value="male">Male
+                <input type="radio" name="gender" value="female">Female
+                <select name="major">
+                  <option value="Computer Science">Computer Science</option>
+                  <option value="Busieness">Busieness</option>
+                  <option value="Alsun">Alsun</option>
+                </select>
+                <input style="width:30%;" class="styles" type="date" name="age"><br>
+
+                <div>
+                    <input type="submit" value="SignUp" name="submit">
+                </div>
+            </form>
 </body>
 {% endblock %}

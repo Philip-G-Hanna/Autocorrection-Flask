@@ -1,5 +1,5 @@
 from models.dbConnection import DatabaseConnection
-
+from flask import session
 class User:
     db_connection = DatabaseConnection()
     __conn = db_connection.get_conn()
@@ -12,6 +12,8 @@ class User:
     __phoneNumber = None
     __password = None
     __dob = None
+    __major = None
+    __gender = None
     __type = 1
 
     def getID(self):
@@ -48,20 +50,23 @@ class User:
         print("exist_account", result)
         return result  
 
-    def addUser(self, fname, lname, email, pn, password, dob):
+    def register_user(self, fname,lname,email, password,gender,phonenumber,major,date):
         self.__fname = fname
         self.__lname = lname
         self.__email = email
-        self.__phoneNumber = pn
         self.__password = password
-        self.__dob = dob
+        self.__gender = gender
+        self.__phoneNumber = phonenumber
+        self.__major = major
+        self.__date = date
 
-        sql = "INSERT INTO `user`( `fname`, `lname`, `email`, `password`, `Type-id`, `age`, `phonenumber`) VALUES (%s, %s, %s, %s, %s, %s, %s)"
-        val = (self.__fname, self.__lname, self.__email, self.__password, self.__type, self.__dob, self.__phoneNumber)    
+        sql = "INSERT INTO user (`fname`,lname,email, `password`,Type_id,gender,phonenumber,major,date) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)"
+        val = (self.__fname,self.__lname ,self.__email,self.__password,1,self.__gender,self.__phoneNumber,self.__major,self.__date)    
         self.__cursor.execute(sql, val)
         self.__conn.commit()  
-        print("addUser")
+        print("register_user")
 
+    
     def login(self, email, password):
         self.__email = email
         self.__password = password
@@ -79,4 +84,5 @@ class User:
             self.__type  = result[5]
             self.__dob = result[7]
             self.__phoneNumber = result[8]
+            session["user_id"] =result[0]
         return result
