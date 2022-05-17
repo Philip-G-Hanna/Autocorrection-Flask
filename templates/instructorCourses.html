@@ -1,11 +1,20 @@
-{% include 'includes/instructor-navbar.html' %}
+{%if utype == 1 %}
+    {% include 'includes/student-navbar.html' %}
+{%elif utype == 2 %}
+    {% include 'includes/instructor-navbar.html' %}
+{%else %}
+    {% include 'includes/default-navbar.html' %}
+{% endif %}
+
+{% extends 'layouts/userLayout.html' %}
+{% block title %}Instructor Courses{% endblock %}
+
+{% block content %}
 
 <!DOCTYPE html>
 <html>
-<title>Transcript</title>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="includes/navbar.css">
-<link rel="stylesheet" href="../static/css/Score.css">
+<link rel="stylesheet" href="static/css/Score.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
@@ -15,8 +24,8 @@
 <meta name="keywords" content="​CORRECTA Auto Correction for subjective questions, INTUITIVE">
 <meta name="description" content="">
 <meta name="page_type" content="np-template-header-footer-from-plugin">
-<link rel="stylesheet" href="../static/css/nicepage.css" media="screen">
-<link rel="stylesheet" href="../static/css/courses.css" media="screen">
+<link rel="stylesheet" href="static/css/nicepage.css" media="screen">
+<link rel="stylesheet" href="static/css/courses.css" media="screen">
 <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
 <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
 <meta name="generator" content="Nicepage 4.4.3, nicepage.com">
@@ -41,7 +50,7 @@
             <h2 class="u-text u-text-default u-text-1">
                 <a class="aalink u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-custom-color-1 u-btn-1" onclick="" href="https://moodle.miuegypt.edu.eg/mod/forum/view.php?id=21883">If you have anyTrouble?<br>
           </a>
-            </h2><span class="u-file-icon u-icon u-icon-1"><img src="../static/images/40.png" alt=""></span>
+            </h2><span class="u-file-icon u-icon u-icon-1"><img src="static/images/40.png" alt=""></span>
             <div class="u-table u-table-responsive u-table-1">
                 <table class="u-table-entity u-table-entity-1">
                     <colgroup>
@@ -73,11 +82,6 @@
         </div>
     </section>
 
-
-
-
-
-
 </body>
-
+{% endblock %}
 </html>
