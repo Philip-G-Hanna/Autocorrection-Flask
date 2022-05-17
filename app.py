@@ -57,11 +57,15 @@ def instructor_feedback():
 @app.route("/profile")
 def profile():
     return userController.profile()
+<<<<<<< Updated upstream
 
 @app.route("/instructorprofile")
 def instructorprofile():
     return render_template("instructorprofile.html")
 
+=======
+    
+>>>>>>> Stashed changes
 @app.route("/questionbank")
 def questionbank():
     return userController.questionbank()
@@ -86,6 +90,10 @@ def logout():
 @app.route("/studentprofile")
 def studentprofile():
     return render_template("studentprofile.html", fn=user.getFname(),ln=user.getLname(),email=user.getEmail(),pn=user.getPhoneNumber(), pw=user.getPassword())
+
+@app.route("/admin")
+def admin():
+    return userController.admin()
 
 if __name__ == "__main__":
     app.run()
