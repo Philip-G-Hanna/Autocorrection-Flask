@@ -5,14 +5,15 @@ class classAssignment:
     __conn = db_connection.get_conn()
     __cursor = db_connection.get_cursor()
     __id = None
-    __text= None
+    __text = None
+    __modelanswer = None
 
     def getQuestionText(self):
         return self.__id
 
-    def addQuestionModelAnswer(self,text,answer):
+    def addQuestionModelAnswer(self,text,modelanswer):
         self.__text = text
-        self.__answer = answer
+        self.__modelanswer = modelanswer
 
         sql = "INSERT INTO `questions`(`text`,`modelanswer`) VALUES (%s,%s)"
         val = (self.__text)  
