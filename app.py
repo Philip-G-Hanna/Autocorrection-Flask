@@ -1,7 +1,6 @@
 
 from flask import Flask
 from flask import  redirect, render_template, request, url_for
-
 from flask import session
 import os
 from controllers.userController import UserController
@@ -58,9 +57,7 @@ def instructor_feedback():
 @app.route("/profile")
 def profile():
     return userController.profile()
-# @app.route("/studentprofile")
-# def studentprofile():
-#     return render_template("studentprofile.html")
+
 @app.route("/instructorprofile")
 def instructorprofile():
     return render_template("instructorprofile.html")
@@ -80,6 +77,7 @@ def transcript():
 @app.route("/instructorCourses")
 def instructorCourses():
     return userController.InstructorCoursess()
+
 @app.route("/logout")
 def logout():
     session.pop('id', None)
