@@ -10,11 +10,12 @@ class classAssignment:
     def getQuestionText(self):
         return self.__id
 
-    def addQuestion(self,text):
+    def addQuestionModelAnswer(self,text,answer):
         self.__text = text
+        self.__answer = answer
 
-        sql = "INSERT INTO `questions`(`text`) VALUES (%s)"
+        sql = "INSERT INTO `questions`(`text`,`modelanswer`) VALUES (%s,%s)"
         val = (self.__text)  
         self.__cursor.execute(sql, val)
         self.__conn.commit()  
-        print("addQuestion")
+        print("Question Added")

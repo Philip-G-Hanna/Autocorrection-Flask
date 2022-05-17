@@ -1,27 +1,21 @@
-{% include 'includes/default-navbar.html' %}
+{% include 'includes/instructor-navbar.html' %}
 
 {% extends 'layouts/userLayout.html' %}
 {% block title %}Question Bank{% endblock %}
 
 {% block content %}
 <head>
-	<link rel="stylesheet" href="static/css/questionbank.css"> <!-- hena by linked styling bt3 sign up -->
-    <script>
-        $(document).ready(function(){
-            "use strict";
-            $(".input-file").delegate("span", "click", function(){
-           $("<br><input type='text' placeholder='Write the question here' name='arr'><span> +</span>").insertAfter($(this)); 
-        });
-        }); 
-        </script>
+	<link rel="stylesheet" href="static/css/questionbank.css">
 </head>
 <body>
         <div class="register">
             <form action="#" method="POST">
-                <input type="text" placeholder="Write the question here" name="txt" required><span> +</span><br>
-                <input type="submit" name="sub" value="Add Questions">
-                <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-    </div>
+                <input type="text" placeholder="Write the question here" name="txt" required>
+            <input type="text" placeholder="Write the model answer here" name="txt1" required>
+            <!-- <span> +</span><br> -->
+            <input type="submit" name="sub" value="Add Questions">
+            <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+        </div>
         
             </form>
     </div>

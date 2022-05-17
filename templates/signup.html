@@ -1,8 +1,11 @@
-{% include 'includes/default-navbar.html' %} {% extends 'layouts/userLayout.html' %} {% block title %}Signup{% endblock %} {% block content %}
+{% include 'includes/default-navbar.html' %}
+{% extends 'layouts/userLayout.html' %}
+{% block title %}Signup{% endblock %}
+
+{% block content %}
 
 <head>
     <link rel="stylesheet" href="static/css/login_styles.css">
-    <!-- hena by linked styling bt3 sign up -->
 </head>
 
 <body>
@@ -37,7 +40,7 @@
                 <input type="radio" name="gender" value="female">Female
                 <select name="major">
                   <option value="Computer Science">Computer Science</option>
-                  <option value="Busieness">Busieness</option>
+                  <option value="Business">Business</option>
                   <option value="Alsun">Alsun</option>
                 </select>
                 <input style="width:30%;" class="styles" type="date" name="age"><br>
