@@ -1,3 +1,4 @@
+from unittest import result
 from flask import  redirect, render_template, request, url_for
 import re
 from flask import session
@@ -95,3 +96,26 @@ class UserController:
     def InstructorCoursess(self):
         result=self.__transcript.instructorCourses(session['user_id'])
         return render_template("instructorCourses.html",length=len(result),result=result)
+
+    def admin(self):
+        return render_template("admin.html")
+
+    def adminuser(self):
+        result= self.__user.getusers()
+        return render_template('adminuser.html',result= result)
+
+    def admin_messages(self):
+        result1= self.__user.getmessages()
+        return render_template('admin_messages.html',result1= result1)
+
+    def admin_courses(self):
+        result2= self.__user.getcourses()
+        return render_template('admin_courses.html',result2= result2)
+
+    def faculty(self):
+        result3= self.__user.getfaculty()
+        return render_template('adminuser.html',result3= result3)
+
+    def userType(self):
+        result4= self.__user.getuserType()
+        return render_template('adminuser.html',result4= result4)

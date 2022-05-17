@@ -37,6 +37,8 @@ def signin():
             return render_template("index.html", utype=1)
         elif(account and user.getType() == 2): #instructor
             return render_template("index.html", utype=2)
+        elif(account and user.getType() == 3): #admin
+            return render_template("admin.html", utype=3)
         else:
             msg = "Incorrect email/password"
             
@@ -57,15 +59,11 @@ def instructor_feedback():
 @app.route("/profile")
 def profile():
     return userController.profile()
-<<<<<<< Updated upstream
 
 @app.route("/instructorprofile")
 def instructorprofile():
     return render_template("instructorprofile.html")
 
-=======
-    
->>>>>>> Stashed changes
 @app.route("/questionbank")
 def questionbank():
     return userController.questionbank()
@@ -95,5 +93,17 @@ def studentprofile():
 def admin():
     return userController.admin()
 
+@app.route("/adminuser")
+def adminuser():
+    return userController.adminuser()
+
+@app.route("/admin_courses")
+def admin_courses():
+    return userController.admin_courses()
+
+@app.route("/admin_messages")
+def admin_messages():
+    return userController.admin_messages()
+   
 if __name__ == "__main__":
     app.run()
