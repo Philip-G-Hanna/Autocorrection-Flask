@@ -21,6 +21,9 @@ class UserController:
             elif(account and self.__user.getType() == 2): #instructor
                 session['id'] = self.__user.getID()
                 return render_template("index.html", utype=2)
+            elif(account and self.__user.getType() == 3): #admin
+                session['id'] = self.__user.getID()
+                return render_template("admin.html", utype=3)
             else:
                 msg = "Incorrect email/password"
         return render_template("signin.html", msg=msg)
@@ -102,7 +105,16 @@ class UserController:
 
     def adminuser(self):
         result= self.__user.getusers()
-        return render_template('adminuser.html',result= result)
+        tablerow = ""
+        for row_data in result:
+            tablerow += "<tr>"
+            for cell_data in row_data:
+                tablerow += "<td>"
+                tablerow += str(cell_data)
+                tablerow += "</td>"
+            tablerow += "</tr>"
+            
+        return render_template('adminuser.html',tablerow= tablerow)
 
     def admin_messages(self):
         result1= self.__user.getmessages()
@@ -118,4 +130,15 @@ class UserController:
 
     def userType(self):
         result4= self.__user.getuserType()
-        return render_template('adminuser.html',result4= result4)
+        tablerow4 = ""
+        for row_data in result4:
+            tablerow4 += "<tr>"
+            for cell_data in row_data:
+                tablerow4 += "<td>"
+                tablerow4 += str(cell_data)
+                tablerow4 += "</td>"
+            tablerow4 += "</tr>"
+        return render_template('adminuser.html',tablerow4= tablerow4)
+
+    def addinstructor(self):
+        return render_template('addinstructor.html')

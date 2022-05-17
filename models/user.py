@@ -86,6 +86,7 @@ class User:
             self.__phoneNumber = result[8]
             session["user_id"] =result[0]
         return result
+        
     def getusers(self):
         sql = "SELECT * FROM user" 
         self.__cursor.execute(sql)

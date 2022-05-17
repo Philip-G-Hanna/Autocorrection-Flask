@@ -1,18 +1,15 @@
-{% include 'includes/default-navbar.html' %}
-{% extends 'layouts/userLayout.html' %}
-{% block title %}Signup{% endblock %}
-
-{% block content %}
+{% include 'includes/default-navbar.html' %} {% extends 'layouts/userLayout.html' %} {% block title %}Signup{% endblock %} {% block content %}
 
 <head>
-    <link rel="stylesheet" href="static/css/login_styles.css">
+    <link rel="stylesheet" href="static/css/sign.css">
+
 </head>
 
 <body>
 
     <div class="container">
         <section id="content">
-            <h1>signup Form</h1>
+            <h1>Registration</h1>
             {% for error in errormsg %}
             <div>
                 {{error}}

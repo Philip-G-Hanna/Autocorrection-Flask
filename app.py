@@ -104,6 +104,10 @@ def admin_courses():
 @app.route("/admin_messages")
 def admin_messages():
     return userController.admin_messages()
+
+@app.route("/addinstructor", methods=['POST', 'GET'])
+def addinstructor():
+    return userController.addinstructor()
    
 if __name__ == "__main__":
     app.run()
