@@ -61,9 +61,9 @@ def profile():
 # @app.route("/studentprofile")
 # def studentprofile():
 #     return render_template("studentprofile.html")
-# @app.route("/studentprofile")
-# def studentprofile():
-#     return render_template("studentprofile.html")
+@app.route("/instructorprofile")
+def instructorprofile():
+    return render_template("instructorprofile.html")
 
 @app.route("/questionbank")
 def questionbank():
