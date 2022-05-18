@@ -25,19 +25,39 @@
         </tr>
     </thead>
 
-    <tbody>
-        {{tablerow |safe }}
+    </thead>
+    <tbody class="u-table-body">
+        {%for i in range(0, length)%}
 
 
+        <tr style="height: 44px;">
+            <td class="u-border-1 u-border-grey-30 u-table-cell">{{result5[i][0]}}</td>
+            <td class="u-border-1 u-border-grey-30 u-table-cell">{{result5[i][1]}}</td>
+            <td class="u-border-1 u-border-grey-30 u-table-cell">{{result5[i][2]}}</td>
+            <td class="u-border-1 u-border-grey-30 u-table-cell">{{result5[i][3]}}</td>
+            <td class="u-border-1 u-border-grey-30 u-table-cell">{{result5[i][4]}}</td>
+            <td class="u-border-1 u-border-grey-30 u-table-cell">{{result5[i][5]}}</td>
+            <td class="u-border-1 u-border-grey-30 u-table-cell">{{result5[i][6]}}</td>
+            <td class="u-border-1 u-border-grey-30 u-table-cell">{{result5[i][7]}}</td>
+            <td class="u-border-1 u-border-grey-30 u-table-cell">{{result5[i][8]}}</td>
+            <td class="u-border-1 u-border-grey-30 u-table-cell">{{result5[i][9]}}</td>
+            <td class="u-border-1 u-border-grey-30 u-table-cell">{{result5[i][10]}}</td>
+            <td class="u-border-1 u-border-grey-30 u-table-cell">{{result5[i][11]}}</td>
+        </tr>
+
+        {%endfor%}
+    </tbody>
+
+    <table>
+        <h3> User Type</h3>
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>User Type</td>
 
 
-        <table class="one">
-            <thead>
-                <tr>
-                    <td>ID</td>
-                    <td>User Type</td>
-                </tr>
-            </thead>
-            {{tablerow4 |safe }}
+            </tr>
+        </thead>
 
-            </body>
+
+        </body>

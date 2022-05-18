@@ -104,41 +104,24 @@ class UserController:
         return render_template("admin.html")
 
     def adminuser(self):
-        result= self.__user.getusers()
-        tablerow = ""
-        for row_data in result:
-            tablerow += "<tr>"
-            for cell_data in row_data:
-                tablerow += "<td>"
-                tablerow += str(cell_data)
-                tablerow += "</td>"
-            tablerow += "</tr>"
-            
-        return render_template('adminuser.html',tablerow= tablerow)
+        result5= self.__user.getusers()
+        return render_template('adminuser.html',result5= result5,length=len(result5))
 
     def admin_messages(self):
         result1= self.__user.getmessages()
-        return render_template('admin_messages.html',result1= result1)
+        return render_template('admin_messages.html',result1= result1,length=len(result1))
 
     def admin_courses(self):
         result2= self.__user.getcourses()
-        return render_template('admin_courses.html',result2= result2)
+        return render_template('admin_courses.html',result2= result2, length=len(result2))
 
     def faculty(self):
         result3= self.__user.getfaculty()
         return render_template('adminuser.html',result3= result3)
 
     def userType(self):
-        result4= self.__user.getuserType()
-        tablerow4 = ""
-        for row_data in result4:
-            tablerow4 += "<tr>"
-            for cell_data in row_data:
-                tablerow4 += "<td>"
-                tablerow4 += str(cell_data)
-                tablerow4 += "</td>"
-            tablerow4 += "</tr>"
-        return render_template('adminuser.html',tablerow4= tablerow4)
+        result6= self.__user.getuserType()
+        return render_template('adminuser.html',result6= result6,length=len(result6))
 
     def addinstructor(self):
         return render_template('addinstructor.html')

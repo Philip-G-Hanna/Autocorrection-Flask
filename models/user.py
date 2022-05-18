@@ -119,7 +119,7 @@ class User:
     def getuserType(self):
         sql4 = "SELECT * FROM usertype" 
         self.__cursor.execute(sql4)
-        result4 = self.__cursor.fetchall()
+        result6 = self.__cursor.fetchall()
         self.__conn.commit()
-        return result4
+        return result6
 
