@@ -1,3 +1,4 @@
+from unittest import result
 from flask import  redirect, render_template, request, url_for
 import re
 from flask import session
@@ -22,7 +23,10 @@ class UserController:
                 return redirect(url_for("index"))
             elif(account and self.__utype == 2): #instructor
                 session['id'] = self.__user.getID()
-                return redirect(url_for("index"))
+                return render_template("index.html", utype=2)
+            elif(account and self.__user.getType() == 3): #admin
+                session['id'] = self.__user.getID()
+                return render_template("admin.html", utype=3)
             else:
                 msg = "Incorrect email/password"
         return render_template("signin.html", msg=msg)
@@ -33,10 +37,12 @@ class UserController:
         print(request.form.get('major'))
         msg = []
         if request.method == "POST":
+            #self.__user.addUser(request.form['fname'], request.form['lname'], request.form['email'], request.form['phone'], request.form['password'], request.form['age'],request.form['gender'])
+            #self.__user.addUser("mohamed")
             account = self.__user.exist_account(request.form['email'])
             if account:
                 msg.append('Account already exists!')
-
+            
             if not re.match(r'[^@]+@[^@]+\.[^@]+', request.form['email']):
                 msg.append('Invalid email address!')
 
@@ -61,12 +67,13 @@ class UserController:
             if len(msg) > 0:
                 return render_template("signup.html", errormsg=msg)
 
-            # no error
             if len(msg) == 0:
                 # Account doesnt exists and the form data is valid, now insert new account into accounts table
-                self.__user.addUser(request.form.get('fname'), request.form.get('lname'), request.form.get('email'), request.form.get('phone'), request.form.get('password'), request.form.get('age'), request.form.get('gender'), request.form.get('major'))
-                self.__utype = 1
-                return redirect(url_for("index"))
+                #return redirect(url_for("index", utype=self.__user.getType()))
+                self.__user.register_user(request.form['fname'], request.form['lname'], request.form['email'], request.form['password'], request.form['gender'], request.form['phone'], request.form['major'],request.form['age'])
+        return render_template("signup.html")
+
+
         
         return render_template("signup.html")
     
@@ -96,5 +103,31 @@ class UserController:
         return render_template("Transcript.html",length=len(result),result=result)
     
     def InstructorCoursess(self):
-        result=self.__transcript.instructorCourses(session['id'])
+        result=self.__transcript.instructorCourses(session['user_id'])
         return render_template("instructorCourses.html",length=len(result),result=result)
+
+    def admin(self):
+        return render_template("admin.html")
+
+    def adminuser(self):
+        result5= self.__user.getusers()
+        return render_template('adminuser.html',result5= result5,length=len(result5))
+
+    def admin_messages(self):
+        result1= self.__user.getmessages()
+        return render_template('admin_messages.html',result1= result1,length=len(result1))
+
+    def admin_courses(self):
+        result2= self.__user.getcourses()
+        return render_template('admin_courses.html',result2= result2, length=len(result2))
+
+    def faculty(self):
+        result3= self.__user.getfaculty()
+        return render_template('adminuser.html',result3= result3)
+
+    def userType(self):
+        result6= self.__user.getuserType()
+        return render_template('adminuser.html',result6= result6,length=len(result6))
+
+    def addinstructor(self):
+        return render_template('addinstructor.html')

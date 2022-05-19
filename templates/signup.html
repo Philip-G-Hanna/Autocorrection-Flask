@@ -1,17 +1,16 @@
-{% extends 'layouts/userLayout.html' %}
-{% block title %}Signup{% endblock %}
+{% include 'includes/default-navbar.html' %} {% extends 'layouts/userLayout.html' %} {% block title %}Signup{% endblock %} {% block content %}
 
-{% block content %}
 <head>
-    <link rel="stylesheet" href="static/css/sign.css"> <!-- hena by linked styling bt3 sign up -->
+    <link rel="stylesheet" href="static/css/sign.css">
+
 </head>
     
 <body>
     
     <div class="container">
-      <section id="content">
-          <h1>Sign-Up Form</h1>
-          {% for error in errormsg %}
+        <section id="content">
+            <h1>Registration</h1>
+            {% for error in errormsg %}
             <div>
                 {{error}}
             </div>

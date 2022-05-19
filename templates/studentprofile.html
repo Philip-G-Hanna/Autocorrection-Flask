@@ -1,7 +1,5 @@
-{% include 'includes/student-navbar.html' %}
+{% include 'includes/student-navbar.html' %} {% extends 'layouts/userLayout.html' %} {% block title %}Student Profile{% endblock %}
 
-{% extends 'layouts/userLayout.html' %}
-{% block title %}Student Profile{% endblock %}
 <head>
     <link rel="stylesheet" href="static/css/student_styles.css">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -30,7 +28,8 @@
                         <h6>
                             Computer Science
                         </h6>
-                        <p class="proile-rating">Semstster : <span>2/4</span></p>
+                        <p class="proile-rating">Semester : <span>2/4</span></p>
+
                         <p class="proile-rating">Number Of Courses : <span>0/100</span></p>
                         <ul class="nav nav-tabs" id="myTab" role="tablist">
                             <li class="nav-item">
