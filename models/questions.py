@@ -52,10 +52,11 @@ class Questions:
         self.__feedback = feedback
         self.__questionid = qid
 
-
-        sql = "UPDATE `questions SET feedback = (%s) WHERE questionID =(%s)"
+        sql = "UPDATE `questions` SET feedback = (%s) WHERE questionID =(%s)"
         val = (self.__feedback, self.__questionid)    
         self.__cursor.execute(sql, val)
         self.__conn.commit()  
         print("feedbackAdded")
         return
+
+    # def submit_question_bank(self, question, answer):

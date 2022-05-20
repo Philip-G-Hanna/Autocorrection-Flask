@@ -1,0 +1,44 @@
+{% include 'includes/student-navbar.html' %}
+
+{% extends 'layouts/userLayout.html' %}
+{% block title %}Assignments{% endblock %}
+
+{% block content %}
+
+<head>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/Quizez.css')}}"> 
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/courses.css') }}" media="screen">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/nicepage.css') }}" media="screen">
+    <script class="u-script" type="text/javascript" src="{{ url_for('static', filename='js/jquery.js') }}" defer=""></script>
+    <script class="u-script" type="text/javascript" src="{{ url_for('static', filename='js/nicepage.js') }}" defer=""></script>
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
+</head>
+
+<body>
+
+<div id="contact" class="Quizez">
+      <br><br><br><br>
+      <h5 class="h5" id="contact"></h5>
+      <div class="title">
+      <div class="u-clearfix u-sheet u-sheet-1">
+      <h2 class="u-text u-text-default u-text-1">
+      <a href="https://moodle.miuegypt.edu.eg/mod/forum/view.php?id=21883" class="aalink u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-custom-color-1 u-btn-1"><i class="fa fa-question"></i> If you have any Trouble?</a>
+        
+        </h2>
+            </div>
+        <div class="w-full px-8">
+            {% for assignment in assignments %}
+                <a href="assignment_question/{{assignment[0]}}"><div class="py-2 my-2 px-4 bg-gray-200 rounded-md hover:bg-gray-300">
+                <p class="text-xl">
+                    {{assignment[1]}}
+                </p>
+                    </div></a>
+            
+          {% endfor %}
+                </div>
+        </div>
+    </div>
+</body>
+
+{% endblock %}
