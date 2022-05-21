@@ -1,5 +1,4 @@
-{%if utype == 1 %} {% include 'includes/student-navbar.html' %} {%elif utype == 2 %} {% include 'includes/instructor-navbar.html' %} {%else %} {% include 'includes/default-navbar.html' %} {% endif %} {% extends 'layouts/userLayout.html' %} {% block title
-%}Transcript{% endblock %} {% block content %}
+{% include 'includes/instructor-navbar.html' %} {% extends 'layouts/userLayout.html' %} {% block title %}Instructor Feedback{% endblock %} {% block content %}
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

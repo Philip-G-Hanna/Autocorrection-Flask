@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 from flask import session
 import os
 
@@ -65,9 +65,9 @@ def submit_quizes_form():
 def instructor_feedback():
     return userController.instructor_feedback()
 
-@app.route("/questionbank")
+@app.route("/questionbank", methods=['POST', 'GET'])
 def questionbank():
-    return userController.questionbank()
+     return userController.questionbank()
 
 @app.route("/transcript")
 def transcript():
@@ -80,7 +80,30 @@ def instructorCourses():
 @app.route("/sendemail", methods=['POST', 'GET'])
 def sendemail():
     return userController.sendemail()
+@app.route("/admin")
+def admin():
+    return userController.admin()
 
+@app.route("/adminuser")
+def adminuser():
+    return userController.adminuser()
+
+@app.route("/admin_courses")
+def admin_courses():
+    return userController.admin_courses()
+
+@app.route("/admin_messages")
+def admin_messages():
+    return userController.admin_messages()
+    
+@app.route("/adminuser")
+def userType():
+    return userController.userType()
+
+@app.route("/addinstructor", methods=['POST', 'GET'])
+def addinstructor():
+    return userController.addinstructor()
+    
 @app.route("/logout")
 def logout():
     session.pop('id', None)

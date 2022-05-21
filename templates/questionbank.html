@@ -1,24 +1,23 @@
-{% include 'includes/instructor-navbar.html' %}
+{% include 'includes/instructor-navbar.html' %} {% extends 'layouts/userLayout.html' %} {% block title %}Question Bank{% endblock %} {% block content %}
 
-{% extends 'layouts/userLayout.html' %}
-{% block title %}Question Bank{% endblock %}
-
-{% block content %}
 <head>
-	<link rel="stylesheet" href="{{ url_for('static', filename='css/questionbank.css') }}">
-    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <link rel="stylesheet" href="static/css/questionbank.css">
+
 </head>
+
 <body>
-        <div class="register">
-            <form action="{{url_for('submit_question_bank')}}" method="POST">
-                <input type="text" placeholder="Write the question here" name="question" required>
-                <input type="text" placeholder="Write the model answer here" name="answer" required>
-                <input type="submit" value="Add Questions">
-            </form>
-        </div>
-        
-         
+    <div class="form">
+        <form action="/questionbank" method="POST">
+            <h1>Question Bank</h1>
+            <input type="text" placeholder="Write the question here" name="txt " required>
+            <input type="text " placeholder="Write the model answer here " name="modelanswer" required>
+            <!-- <span> +</span><br> -->
+            <input type="submit" name="submit" value="Add Question">
+            <script type="text/javascript " src="http://code.jquery.com/jquery-latest.min.js "></script>
     </div>
-        </body>
- 
+
+    </form>
+    </div>
+</body>
+
 {% endblock %}
