@@ -1,16 +1,31 @@
+<<<<<<< HEAD
+{% extends 'layouts/userLayout.html' %}
+{% block title %}Signup{% endblock %}
+
+{% block content %}
+<head>
+    <link rel="stylesheet" href="static/css/sign.css"> <!-- hena by linked styling bt3 sign up -->
+=======
 {% include 'includes/default-navbar.html' %} {% extends 'layouts/userLayout.html' %} {% block title %}Signup{% endblock %} {% block content %}
 
 <head>
     <link rel="stylesheet" href="static/css/sign.css">
 
+>>>>>>> ced7d70a6ddf5e1c26eeb64a0816cb197dbdc6eb
 </head>
 
 <body>
 
     <div class="container">
+<<<<<<< HEAD
+      <section id="content">
+          <h1>Sign-Up Form</h1>
+          {% for error in errormsg %}
+=======
         <section id="content">
             <h1>Registration</h1>
             {% for error in errormsg %}
+>>>>>>> ced7d70a6ddf5e1c26eeb64a0816cb197dbdc6eb
             <div>
                 {{error}}
             </div>

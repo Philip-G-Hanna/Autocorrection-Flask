@@ -1,6 +1,43 @@
 {% include 'includes/default-navbar.html' %} {% extends 'layouts/userLayout.html' %} {% block title %}Signin{% endblock %} {% block content %}
 
 <head>
+<<<<<<< HEAD
+	<link rel="stylesheet" href="static/css/login_styles.css"> <!-- hena by linked styling bt3 sign up -->
+	<link rel="stylesheet" href="static/css/test2.css">	
+</head>
+<body>
+		<h2>Login Page</h2>
+		<div class="container" id="container">
+		<div class="form-container sign-up-container">
+				<form action="#" method="POST">
+					<h1>Create Account</h1>
+					<div class="social-container">
+						<a href="#" class="social"><i class="fa fa-github"></i></a>
+						<a href="#" class="social"><i class="bi bi-google"></i></a>
+						<a href="#" class="social"><i class="fa fa-linkedin-in"></i></a>
+					</div>
+					<span>or use your email for registration</span>
+					<input type="text" placeholder="Name" />
+					<input type="email"name="email" placeholder="Email" />
+					<input type="password" name="password"placeholder="Password" />
+					<input type="submit" name="submit"value="Sign Up">
+				</form>
+		</div>
+		<div class="form-container sign-in-container">
+			<form action="/signin" method="post">
+				<h1>Sign in</h1>
+				<div class="social-container">
+				<a href="#"><i class="fa fa-linkedin-square"></i>
+				<a href="#"><i class="fa fa-github"></i>
+				<a href="#"><i class="fab fa-google-plus-g"></i>
+				
+				</div>
+				<span>or use your account</span><br>
+				
+				{%if msg != '' %}
+					<div class="alert alert-danger">{{ msg }}</div>
+				{% endif %}
+=======
     <link rel="stylesheet" href="static/css/login_styles.css">
     <!-- hena by linked styling bt3 sign up -->
 
@@ -52,6 +89,7 @@
             </div>
         </div>
     </div>
+>>>>>>> ced7d70a6ddf5e1c26eeb64a0816cb197dbdc6eb
 
 </body>
 {% endblock %}
