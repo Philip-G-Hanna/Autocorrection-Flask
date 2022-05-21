@@ -87,8 +87,52 @@ class User:
             self.__fname = result[1]
             self.__lname = result[2]
             self.__type  = result[5]
+<<<<<<< HEAD
             self.__gender = result[7]
             self.__dob = result[8]
             self.__phoneNumber = result[9]
             self.__major = result[10]
         return result
+=======
+            self.__dob = result[7]
+            self.__phoneNumber = result[8]
+            session["user_id"] =result[0]
+        return result
+        
+    def getusers(self):
+        sql = "SELECT * FROM user" 
+        self.__cursor.execute(sql)
+        result = self.__cursor.fetchall()
+        self.__conn.commit()
+        return result
+
+    def getmessages(self):
+        sql1 = "SELECT * FROM contact_us" 
+        self.__cursor.execute(sql1)
+        result1 = self.__cursor.fetchall()
+        self.__conn.commit()
+        return result1
+
+    def getcourses(self):
+        sql2 = "SELECT * FROM courses" 
+        self.__cursor.execute(sql2)
+        result2 = self.__cursor.fetchall()
+        self.__conn.commit()
+        return result2
+
+    def getfaculty(self):
+        sql3 = "SELECT * FROM faculty" 
+        self.__cursor.execute(sql3)
+        result3 = self.__cursor.fetchall()
+        self.__conn.commit()
+        return result3
+    
+
+    def getuserType(self):
+        sql4 = "SELECT * FROM usertype" 
+        self.__cursor.execute(sql4)
+        result6 = self.__cursor.fetchall()
+        self.__conn.commit()
+        return result6
+
+>>>>>>> ced7d70a6ddf5e1c26eeb64a0816cb197dbdc6eb

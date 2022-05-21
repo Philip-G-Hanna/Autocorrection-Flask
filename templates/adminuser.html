@@ -1,0 +1,63 @@
+{% include 'includes/admin-navbar.html' %}
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../static/css/admin.css">
+</head>
+
+<table>
+    <h3> User Accounts</h3>
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>Email </td>
+            <td>Password</td>
+            <td>Type Id</td>
+            <td>Created-At</td>
+            <td>Gender</td>
+            <td>Phone number</td>
+            <td>Major</td>
+            <td>Mjor ID</td>
+            <td>Birthdate</td>
+
+        </tr>
+    </thead>
+
+    </thead>
+    <tbody class="u-table-body">
+        {%for i in range(0, length)%}
+
+
+        <tr style="height: 44px;">
+            <td class="u-border-1 u-border-grey-30 u-table-cell">{{result5[i][0]}}</td>
+            <td class="u-border-1 u-border-grey-30 u-table-cell">{{result5[i][1]}}</td>
+            <td class="u-border-1 u-border-grey-30 u-table-cell">{{result5[i][2]}}</td>
+            <td class="u-border-1 u-border-grey-30 u-table-cell">{{result5[i][3]}}</td>
+            <td class="u-border-1 u-border-grey-30 u-table-cell">{{result5[i][4]}}</td>
+            <td class="u-border-1 u-border-grey-30 u-table-cell">{{result5[i][5]}}</td>
+            <td class="u-border-1 u-border-grey-30 u-table-cell">{{result5[i][6]}}</td>
+            <td class="u-border-1 u-border-grey-30 u-table-cell">{{result5[i][7]}}</td>
+            <td class="u-border-1 u-border-grey-30 u-table-cell">{{result5[i][8]}}</td>
+            <td class="u-border-1 u-border-grey-30 u-table-cell">{{result5[i][9]}}</td>
+            <td class="u-border-1 u-border-grey-30 u-table-cell">{{result5[i][10]}}</td>
+            <td class="u-border-1 u-border-grey-30 u-table-cell">{{result5[i][11]}}</td>
+        </tr>
+
+        {%endfor%}
+    </tbody>
+
+    <table>
+        <h3> User Type</h3>
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>User Type</td>
+
+
+            </tr>
+        </thead>
+
+
+        </body>

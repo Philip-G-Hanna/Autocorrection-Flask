@@ -1,0 +1,29 @@
+{% include 'includes/admin-navbar.html' %}
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../static/css/admin.css">
+    <link rel="stylesheet" href="../static/css/instructor_registration.css">
+</head>
+<form action="action_page.php">
+    <div class="container">
+        <h1>Add Instructor Account</h1>
+        <hr>
+        <label for="email"><b>First Name</b></label>
+        <input type="text" placeholder="Enter your first name" name="name" id="fname" required>
+
+        <label for="email"><b>Last Name</b></label>
+        <input type="text" placeholder="Enter your last name" name="lname" id="lname" required>
+
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Enter your Email" name="email" id="email" required>
+
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter your Password" name="psw" id="psw" required>
+
+        <label for="psw-repeat"><b>Confirm Password</b></label>
+        <input type="password" placeholder="confirm Password" name="psw-repeat" id="psw-repeat" required>
+        <hr>
+        <button type="submit" class="registerbtn">Register</button>
+    </div>
+</form>
