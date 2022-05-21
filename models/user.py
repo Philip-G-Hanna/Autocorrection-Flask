@@ -84,7 +84,6 @@ class User:
             self.__fname = result[1]
             self.__lname = result[2]
             self.__type  = result[5]
-            self.__gender = result[7]
             self.__dob = result[7]
             self.__phoneNumber = result[8]
             session["user_id"] =result[0]
@@ -127,7 +126,6 @@ class User:
         result6 = self.__cursor.fetchall()
         self.__conn.commit()
         return result6
-
 
     def deletecourses(self,courseid):
         self.__courseid = courseid
