@@ -1,5 +1,5 @@
 from models.dbConnection import DatabaseConnection
-from flask import session
+
 class User:
     db_connection = DatabaseConnection()
     __conn = db_connection.get_conn()
@@ -11,9 +11,9 @@ class User:
     __email = None
     __phoneNumber = None
     __password = None
+    __gender = None
     __dob = None
     __major = None
-    __gender = None
     __type = 1
     __courseid= None
 
@@ -37,8 +37,14 @@ class User:
     def getPassword(self):
         return self.__password
 
+    def getGender(self):
+        return self.__gender
+
     def getDob(self):
         return self.__dob
+
+    def getMajor(self):
+        return self.__major
 
     def getType(self):
         return self.__type
@@ -52,23 +58,22 @@ class User:
         print("exist_account", result)
         return result  
 
-    def register_user(self, fname,lname,email, password,gender,phonenumber,major,date):
+    def addUser(self, fname, lname, email, pn, password, dob, gender, major):
         self.__fname = fname
         self.__lname = lname
         self.__email = email
+        self.__phoneNumber = pn
         self.__password = password
+        self.__dob = dob
         self.__gender = gender
-        self.__phoneNumber = phonenumber
         self.__major = major
-        self.__date = date
 
-        sql = "INSERT INTO user (`fname`,lname,email, `password`,Type_id,gender,phonenumber,major,date) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)"
-        val = (self.__fname,self.__lname ,self.__email,self.__password,1,self.__gender,self.__phoneNumber,self.__major,self.__date)    
+        sql = "INSERT INTO `user`( `fname`, `lname`, `email`, `password`, `Type-id`, `gender`,  `phonenumber`, `major`) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)"
+        val = (self.__fname, self.__lname, self.__email, self.__password, self.__type, self.__gender, self.__phoneNumber, self.__major)    
         self.__cursor.execute(sql, val)
         self.__conn.commit()  
-        print("register_user")
+        print("addUser")
 
-    
     def login(self, email, password):
         self.__email = email
         self.__password = password

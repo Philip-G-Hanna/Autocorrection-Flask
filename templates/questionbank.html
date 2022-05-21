@@ -5,20 +5,20 @@
 
 {% block content %}
 <head>
-	<link rel="stylesheet" href="static/css/questionbank.css">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/questionbank.css') }}">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 <body>
         <div class="register">
-            <form action="#" method="POST">
-                <input type="text" placeholder="Write the question here" name="txt" required>
-            <input type="text" placeholder="Write the model answer here" name="txt1" required>
-            <!-- <span> +</span><br> -->
-            <input type="submit" name="sub" value="Add Questions">
-            <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+            <form action="{{url_for('submit_question_bank')}}" method="POST">
+                <input type="text" placeholder="Write the question here" name="question" required>
+                <input type="text" placeholder="Write the model answer here" name="answer" required>
+                <input type="submit" value="Add Questions">
+            </form>
         </div>
         
-            </form>
+         
     </div>
         </body>
  
-    {% endblock %}
+{% endblock %}

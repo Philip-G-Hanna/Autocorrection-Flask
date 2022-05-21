@@ -2,23 +2,26 @@ from unittest import result
 from flask import  redirect, render_template, request, url_for
 import re
 from flask import session
-from models.classAssignments import classAssignment
 from models.user import User
-from models.transcript import transcript
-from models.contacts import Contacts
+from models.contacts import Contacts 
+from models.transcript import transcript    
+from models.classAssignments import classAssignment
 
 class UserController:
     __user = User()
+    __utype = 0
     __transcript = transcript()
     __classAssignment = classAssignment()
+    
     def signin(self):
         msg = ''
         if request.method == "POST":
             account = self.__user.login(request.form['email'], request.form['password'])
-            if(account and self.__user.getType() == 1): #student
+            self.__utype = self.__user.getType()
+            if(account and self.__utype == 1): #student
                 session['id'] = self.__user.getID()
-                return render_template("index.html", utype=1)
-            elif(account and self.__user.getType() == 2): #instructor
+                return redirect(url_for("index"))
+            elif(account and self.__utype == 2): #instructor
                 session['id'] = self.__user.getID()
                 return render_template("index.html", utype=2)
             elif(account and self.__user.getType() == 3): #admin
@@ -29,6 +32,9 @@ class UserController:
         return render_template("signin.html", msg=msg)
 
     def signup(self):
+        print("fname:",request.form.get('fname'))
+        print(request.form.get('gender'))
+        print(request.form.get('major'))
         msg = []
         if request.method == "POST":
             #self.__user.addUser(request.form['fname'], request.form['lname'], request.form['email'], request.form['phone'], request.form['password'], request.form['age'],request.form['gender'])
@@ -69,9 +75,10 @@ class UserController:
 
 
         
+        return render_template("signup.html")
     
     def index(self):
-        return render_template("index.html")
+        return render_template("index.html", utype= self.__utype)
 
     def sendemail(self):
         if request.method == "POST":
@@ -81,17 +88,16 @@ class UserController:
         
     def profile(self):
         return render_template("profile.html", fn=self.__user.getFname(),ln=self.__user.getLname(),email=self.__user.getEmail(),pn=self.__user.getPhoneNumber(), utype=self.__user.getType())
-    
 
+    
     def instructor_feedback(self):
         return render_template("instructor_feedback.html", fn=self.__user.getFname(),ln=self.__user.getLname(), utype=self.__user.getType())    
-    
 
     def questionbank(self):
-        return render_template("questionbank.html", text=self.__classAssignment.getQuestionText())
+        return render_template("questionbank.html")
     
     def transcript(self):
-        result=self.__transcript.transcript(session['user_id'])
+        result=self.__transcript.transcript(session['id'])
         #return render_template("Transcript.html",name='result[1]',code="result[2]",instructor="result[3]",score="result[4]")
         #return render_template("Transcript.html",length=len(result),name=result[1],code=result[2],instructor=result[3],score=result[4])
         return render_template("Transcript.html",length=len(result),result=result)

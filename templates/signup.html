@@ -4,9 +4,9 @@
     <link rel="stylesheet" href="static/css/sign.css">
 
 </head>
-
+    
 <body>
-
+    
     <div class="container">
         <section id="content">
             <h1>Registration</h1>
@@ -14,37 +14,90 @@
             <div>
                 {{error}}
             </div>
-            {% endfor %}
-
-            <!-- sign-up form -->
-            <form class="/signup" method="POST">
-
-                <input class="styles" type="text" name="fname" value="" required placeholder="Enter your First name..">
-
-
-                <input class="styles" type="text" name="lname" value="" required placeholder="Enter your Last name..">
-
-
-                <input class="styles" type="text" name="email" value="" required placeholder="Enter your email..">
-
-                <input class="styles" type="text" name="phone" value="" required placeholder="Enter your phonenumber..">
-
-                <input type="password" name="password" placeholder="Password" required="" id="password" />
-
-                <br>
-                <input type="password" name="rpassword" placeholder=" Re-type your password.." required="" id="password" />
-                <input type="radio" name="gender" value="male">Male
-                <input type="radio" name="gender" value="female">Female
-                <select name="major">
-                  <option value="Computer Science">Computer Science</option>
-                  <option value="Business">Business</option>
-                  <option value="Alsun">Alsun</option>
-                </select>
-                <input style="width:30%;" class="styles" type="date" name="age"><br>
-
-                <div>
-                    <input type="submit" value="SignUp" name="submit">
+          {% endfor %}
+    
+        <!-- sign-up form -->
+        <div class="container">
+          <div class="title">Registration</div>
+          <div class="content">
+            <form action="/signup" method="post">
+              <div class="user-details">
+                <div class="input-box">
+                  <span class="details">Full Name</span>
+                  <input type="text" name="fname" placeholder="Enter your First Name" required>
                 </div>
+                <div class="input-box">
+                  <span class="details">Last Name</span>
+                  <input type="text" name="lname" placeholder="Enter your Last Name" required>
+                </div>
+                <div class="input-box">
+                  <span class="details">Email</span>
+                  <input type="text" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="input-box">
+                  <span class="details">Phone Number</span>
+                  <input type="text" name="phone" placeholder="Enter your number" required>
+                </div>
+                <div class="input-box">
+                  <span class="details">Password</span>
+                  <input type="password" name="password" placeholder="Enter your password" required>
+                </div>
+                <div class="input-box">
+                  <span class="details">Confirm Password</span>
+                  <input type="password" name="rpassword" placeholder="Confirm your password" required>
+                </div>
+              </div>
+              <div class="gender-details">
+                <input type="radio" name="gender" id="dot-1" value="Male">
+                <input type="radio" name="gender" id="dot-2" value="Female">
+                <input type="radio" name="gender" id="dot-3" value="Prefer Not To Say">
+                <span class="gender-title">Gender</span>
+                <div class="category">
+                  <label for="dot-1">
+                  <span class="dot one"></span>
+                  <span class="gender">Male</span>
+                </label>
+                <label for="dot-2">
+                  <span class="dot two"></span>
+                  <span class="gender">Female</span>
+                </label>
+                <label for="dot-3">
+                  <span class="dot three"></span>
+                  <span class="gender">Prefer not to say</span>
+                  </label>
+                </div>
+              </div>
+              <div class="form-group"> 
+                  <label class="group-title">Major/Faculty</label>
+                    <div class="details">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                    <select name="major" class="form-control selectpicker">
+                      <option value="#">Select your Faculty</option>
+                      <option value="Computer Science">Computer Science</option>
+                      <option value="Business">Business</option>
+                      <option value="Alsun">Alsun</option>
+                      <option value="Mass communication">Mass communication</option>
+                      <option value="Pharamacy">Pharamacy</option>
+                      <option value="Dentistry">Dentistry</option>
+                      <option value="Architecture">Architecture</option>
+                      <option value="Electronics">Electronics</option>
+      
+                    </select>
+                  </div>
+                </div>
+                </div>
+                <div class="form-group"> 
+                  <label class="group-title">Date</label>
+                  <div>
+                <input style ="width:30%;" class="styles" type="date" name="age" ><br></div>
+      </div>
+              <div class="button">
+                <input type="submit" value="Register"> <br>
+                <a href="/signin">Login Page</a>
+              </div>
             </form>
+          </div>
+        </div> 
 </body>
 {% endblock %}
