@@ -1,15 +1,5 @@
-{%if utype == 1 %}
-    {% include 'includes/student-navbar.html' %}
-{%elif utype == 2 %}
-    {% include 'includes/instructor-navbar.html' %}
-{%else %}
-    {% include 'includes/default-navbar.html' %}
-{% endif %}
-
-{% extends 'layouts/userLayout.html' %}
-{% block title %}Instructor Courses{% endblock %}
-
-{% block content %}
+{%if utype == 1 %} {% include 'includes/student-navbar.html' %} {%elif utype == 2 %} {% include 'includes/instructor-navbar.html' %} {%else %} {% include 'includes/default-navbar.html' %} {% endif %} {% extends 'layouts/userLayout.html' %} {% block title
+%}Instructor Courses{% endblock %} {% block content %}
 
 <!DOCTYPE html>
 <html>
@@ -84,4 +74,5 @@
 
 </body>
 {% endblock %}
+
 </html>

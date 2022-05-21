@@ -13,6 +13,8 @@
             <td>Description</td>
             <td>Faculty ID </td>
             <td>Instructor Name </td>
+            <td>Delete</td>
+
 
 
         </tr>
@@ -20,13 +22,13 @@
     <tbody class="u-table-body">
         {%for i in range(0, length)%}
 
-
         <tr style="height: 44px;">
             <td class="u-border-1 u-border-grey-30 u-table-cell">{{result2[i][0]}}</td>
             <td class="u-border-1 u-border-grey-30 u-table-cell">{{result2[i][1]}}</td>
             <td class="u-border-1 u-border-grey-30 u-table-cell">{{result2[i][2]}}</td>
             <td class="u-border-1 u-border-grey-30 u-table-cell">{{result2[i][4]}}</td>
             <td class="u-border-1 u-border-grey-30 u-table-cell">{{result2[i][5]}}</td>
+            <td><button type="button">Delete</button></td>
         </tr>
 
         {%endfor%}

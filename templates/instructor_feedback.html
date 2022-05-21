@@ -1,15 +1,6 @@
-{%if utype == 1 %}
-    {% include 'includes/student-navbar.html' %}
-{%elif utype == 2 %}
-    {% include 'includes/instructor-navbar.html' %}
-{%else %}
-    {% include 'includes/default-navbar.html' %}
-{% endif %}
+{%if utype == 1 %} {% include 'includes/student-navbar.html' %} {%elif utype == 2 %} {% include 'includes/instructor-navbar.html' %} {%else %} {% include 'includes/default-navbar.html' %} {% endif %} {% extends 'layouts/userLayout.html' %} {% block title
+%}Transcript{% endblock %} {% block content %}
 
-{% extends 'layouts/userLayout.html' %}
-{% block title %}Transcript{% endblock %}
-
-{% block content %}
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="​CORRECTA Auto Correction for subjective questions, INTUITIVE">
@@ -62,26 +53,7 @@
                             <label for="message-539e" class="u-label">Instructor Feedback</label>
                             <textarea placeholder="Give feedback" rows="4" cols="50" id="message-539e" name="Feedback" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required=""></textarea>
                         </div>
-                        <div class="u-form-group u-form-select u-form-group-5">
-                            <label for="select-05bb" class="u-label">Score</label>
-                            <div class="u-form-select-wrapper">
-                                <select id="select-05bb" name="Score" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
-                  <option value="A">A</option>
-                  <option value="A-">A-</option>
-                  <option value="B+">B+</option>
-                  <option value="B">B</option>
-                  <option value="B-">B-</option>
-                  <option value="C+">C+</option>
-                  <option value="C">C</option>
-                  <option value="C-">C-</option>
-                  <option value="D+">D+</option>
-                  <option value="D">D</option>
-                  <option value="D-">D-</option>
-                  <option value="F">F</option>
-                </select>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
-                            </div>
-                        </div>
+
                         <div class="u-align-left u-form-group u-form-submit">
                             <a href="#" class="u-border-none u-btn u-btn-submit u-button-style u-custom-color-1 u-btn-1">Submit</a>
                             <input type="submit" value="submit" class="u-form-control-hidden">

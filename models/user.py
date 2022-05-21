@@ -1,4 +1,5 @@
 from models.dbConnection import DatabaseConnection
+from flask import session
 
 class User:
     db_connection = DatabaseConnection()
@@ -15,6 +16,9 @@ class User:
     __dob = None
     __major = None
     __type = 1
+    __courseid= None
+
+
 
     def getID(self):
         return self.__id
@@ -48,7 +52,6 @@ class User:
     
     def exist_account(self, email):
         self.__email = email
-
         sql = """SELECT * FROM user WHERE email = %s"""
         self.__cursor.execute(sql, (self.__email,))
         result = self.__cursor.fetchone()
@@ -87,13 +90,7 @@ class User:
             self.__fname = result[1]
             self.__lname = result[2]
             self.__type  = result[5]
-<<<<<<< HEAD
             self.__gender = result[7]
-            self.__dob = result[8]
-            self.__phoneNumber = result[9]
-            self.__major = result[10]
-        return result
-=======
             self.__dob = result[7]
             self.__phoneNumber = result[8]
             session["user_id"] =result[0]
@@ -120,6 +117,8 @@ class User:
         self.__conn.commit()
         return result2
 
+   
+
     def getfaculty(self):
         sql3 = "SELECT * FROM faculty" 
         self.__cursor.execute(sql3)
@@ -128,11 +127,19 @@ class User:
         return result3
     
 
-    def getuserType(self):
+    def getuserType(self): 
         sql4 = "SELECT * FROM usertype" 
         self.__cursor.execute(sql4)
         result6 = self.__cursor.fetchall()
         self.__conn.commit()
         return result6
 
->>>>>>> ced7d70a6ddf5e1c26eeb64a0816cb197dbdc6eb
+
+    def deletecourses(self,courseid):
+        self.__courseid = courseid
+        sql2 = """DELETE from courses WHERE id=%s""" 
+        print(sql2)
+        self.__cursor.execute(sql2, (self.__courseid))
+        result7 = self.__cursor.fetchall()
+        self.__conn.commit()
+        return result7
