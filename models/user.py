@@ -15,6 +15,9 @@ class User:
     __major = None
     __gender = None
     __type = 1
+    __courseid= None
+
+
 
     def getID(self):
         return self.__id
@@ -42,7 +45,6 @@ class User:
     
     def exist_account(self, email):
         self.__email = email
-
         sql = """SELECT * FROM user WHERE email = %s"""
         self.__cursor.execute(sql, (self.__email,))
         result = self.__cursor.fetchone()
@@ -108,6 +110,8 @@ class User:
         self.__conn.commit()
         return result2
 
+   
+
     def getfaculty(self):
         sql3 = "SELECT * FROM faculty" 
         self.__cursor.execute(sql3)
@@ -116,10 +120,18 @@ class User:
         return result3
     
 
-    def getuserType(self):
+    def getuserType(self): 
         sql4 = "SELECT * FROM usertype" 
         self.__cursor.execute(sql4)
         result6 = self.__cursor.fetchall()
         self.__conn.commit()
         return result6
 
+    def deletecourses(self,courseid):
+        self.__courseid = courseid
+        sql2 = """DELETE from courses WHERE id=%s""" 
+        print(sql2)
+        self.__cursor.execute(sql2, (self.__courseid))
+        result7 = self.__cursor.fetchall()
+        self.__conn.commit()
+        return result7
