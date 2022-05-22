@@ -1,4 +1,3 @@
-
 from flask import Flask
 from flask import  redirect, render_template, request, url_for
 from flask import session
@@ -13,11 +12,8 @@ app.secret_key = os.urandom(24)
 def signin():
     return userController.signin()
 
-from flask import Flask, redirect, render_template, request, url_for
-from flask import session
-import os
+
 from models.user import User 
-from controllers.userController import UserController
 userController = UserController()
 user = User()
 

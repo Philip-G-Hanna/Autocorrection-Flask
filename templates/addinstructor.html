@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="../static/css/admin.css">
     <link rel="stylesheet" href="../static/css/instructor_registration.css">
 </head>
-<form action="action_page.php">
+<form method="post">
     <div class="container">
         <h1>Add Instructor Account</h1>
         <hr>
@@ -23,6 +23,26 @@
 
         <label for="psw-repeat"><b>Confirm Password</b></label>
         <input type="password" placeholder="confirm Password" name="psw-repeat" id="psw-repeat" required>
+
+        <label for="psw-repeat"><b>PhoneNumber</b></label>
+        <input type="password" placeholder="confirm Password" name="phone" id="psw-repeat" required>
+
+        <label for="psw-repeat"><b>Gender</b></label><br><br> Male
+
+        <input type="radio" name="gender" value="Male" id="psw-repeat" required> Female
+        <input type="radio" name="gender" value="FeMale" id="psw-repeat" required>
+        <br>
+        <label for="psw-repeat"><b>Major</b></label>
+        <select name="major">
+        <option value="Computer Science">Computer Science</option>
+        <option value="Business">Business</option>
+        <option value="Alsun">Alsun</option>
+        </select>
+        <br>
+        <label for="psw-repeat"><b>Date</b></label>
+        <input style="width:30%;" class="styles" type="date" name="age"><br>
+
+
         <hr>
         <button type="submit" class="registerbtn">Register</button>
     </div>
