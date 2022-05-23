@@ -94,9 +94,9 @@ class UserController:
     
     def transcript(self):
         result=self.__transcript.transcript(session['user_id'])
-        #return render_template("Transcript.html",name='result[1]',code="result[2]",instructor="result[3]",score="result[4]")
-        #return render_template("Transcript.html",length=len(result),name=result[1],code=result[2],instructor=result[3],score=result[4])
-        return render_template("Transcript.html",length=len(result),result=result)
+        #return render_template("transcript.html",name='result[1]',code="result[2]",instructor="result[3]",score="result[4]")
+        #return render_template("transcript.html",length=len(result),name=result[1],code=result[2],instructor=result[3],score=result[4])
+        return render_template("transcript.html",length=len(result),result=result)
     
     def InstructorCoursess(self):
         result=self.__transcript.instructorCourses(session['user_id'])
