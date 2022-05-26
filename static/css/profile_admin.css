@@ -23,6 +23,7 @@ body {
     background-clip: border-box;
     border: 0 solid rgba(0, 0, 0, .125);
     border-radius: 2.25rem;
+    width: 52pc;
     margin-bottom: 10px;
 }
 
