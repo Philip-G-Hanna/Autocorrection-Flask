@@ -1,0 +1,127 @@
+{% include 'includes/student-navbar.html' %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        #h1 {
+            font-family: "Segoe UI", Arial, sans-serif;
+            font-weight: 400;
+            margin: 101px 120px;
+        }
+        
+        #customers {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            margin-top: 143px;
+            margin-left: 271px;
+            width: 1000px;
+            height: 112px;
+        }
+        
+        #customers td,
+        #customers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        
+        #customers tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        #customers tr:hover {
+            background-color: #ddd;
+        }
+        
+        #customers th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: center;
+            background-color: #239808;
+            color: white;
+        }
+        
+        @media (max-width: 1199px) {
+            .u-section-1 .u-text-1 {
+                margin-left: 0;
+            }
+            .u-section-1 .u-icon-1 {
+                margin-right: 845px;
+            }
+            .u-section-1 .u-table-1 {
+                width: 940px;
+                margin-left: 0;
+            }
+        }
+        
+        @media (max-width: 991px) {
+            .u-section-1 .u-icon-1 {
+                margin-top: 52px;
+                margin-right: 647px;
+            }
+            .u-section-1 .u-table-1 {
+                margin-top: 31px;
+                margin-bottom: 20px;
+                width: 720px;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .u-section-1 .u-icon-1 {
+                margin-top: 29px;
+                margin-right: 485px;
+            }
+            .u-section-1 .u-table-1 {
+                margin-top: 54px;
+                margin-bottom: 43px;
+                width: 540px;
+            }
+        }
+        
+        @media (max-width: 575px) {
+            .u-section-1 .u-icon-1 {
+                margin-right: 305px;
+            }
+            .u-section-1 .u-table-1 {
+                margin-bottom: 56px;
+                width: 340px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Transcript</h1>
+
+    <table id="customers">
+        <tr>
+            <th>Score</th>
+
+        </tr>
+        <tr>
+            <td>{{acc}}</td>
+
+        </tr>
+
+    </table>
+
+</body>
+
+
+</html>
+
+<!-- <html>
+
+
+<div class="py-2 my-2 px-4 bg-gray-200 rounded-md hover:bg-gray-300">
+    <p class="text-xl">
+        {{acc}}
+    </p>
+
+
+</div>
+
+
+
+</html> -->

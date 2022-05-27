@@ -21,7 +21,8 @@ class CourseController:
 
     def selected_assignment_question(self, id):
         questions = self.__courses.course_questions(id)
-        return render_template("questions_assignments.html", questions=questions)
+        model_answer = self.__courses.course_questions(id)
+        return render_template("questions_assignments.html", questions=questions, model_answer=model_answer)
 
     def course_choice_quizes(self, id):
         questions = self.__courses.course_choice_quizes(id)
