@@ -1,8 +1,9 @@
-{% include 'includes/instructor-navbar.html' %} {% extends 'layouts/userLayout.html' %} {% block title %}Instructor Feedback{% endblock %} {% block content %}
+{%if utype == 1 %} {% include 'includes/student-navbar.html' %} {%elif utype == 2 %} {% include 'includes/instructor-navbar.html' %} {% endif %}
+<br><br><br> {% extends 'layouts/userLayout.html' %} {% block title %}Feedback{% endblock %} {% block content%}
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="​CORRECTA Auto Correction for subjective questions, INTUITIVE">
+    <meta name="keywords" content="CORRECTA Auto Correction for subjective questions, INTUITIVE">
     <meta name="generator" content="Nicepage 4.4.3, nicepage.com">
     <meta name="description" content="">
     <meta name="page_type" content="np-template-header-footer-from-plugin">
