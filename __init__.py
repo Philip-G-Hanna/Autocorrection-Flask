@@ -1,7 +1,7 @@
-from flask import Flask, render_template
+from flask import Flask, render_template,request
 from flask import session
 import os
-
+from test import *
 from controllers.userController import UserController
 userController = UserController()
 
@@ -51,7 +51,17 @@ def course_choice_quizes(course_id):
 
 @app.route("/coursechoice/assignments/assignment_question/<assignment_id>")
 def selected_assignment_question(assignment_id):
+
     return courseController.selected_assignment_question(assignment_id)
+
+@app.route("/coursechoice/assignments/assignment_question/",methods=['POST'])
+def getdata():
+    ans = request.form['answer']
+    ref_ans = request.form['refrance_ans']
+    print(ans)
+    print(ref_ans)
+    acc =test(ref_ans, ans)
+    return render_template("show data.html", acc=acc)
 
 @app.route("/submit_form", methods= ['GET', 'POST'])
 def submit_form():
@@ -95,10 +105,17 @@ def admin_courses():
 @app.route("/admin_messages")
 def admin_messages():
     return userController.admin_messages()
+
+
+
     
 @app.route("/adminuser")
 def userType():
     return userController.userType()
+    
+
+
+    
 
 @app.route("/addinstructor", methods=['POST', 'GET'])
 def addinstructor():
@@ -111,4 +128,4 @@ def logout():
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(port=4000)

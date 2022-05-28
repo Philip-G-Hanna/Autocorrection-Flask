@@ -135,19 +135,3 @@ class User:
         result7 = self.__cursor.fetchall()
         self.__conn.commit()
         return result7
-
-    def Add_Instructor(self, fname,lname,email, password,gender,phonenumber,major,date):
-        self.__fname = fname
-        self.__email = email
-        self.__lname = lname
-        self.__password = password
-        self.__gender = gender
-        self.__phoneNumber = phonenumber
-        self.__major = major
-        self.__date = date
-
-        sql = "INSERT INTO user (`fname`,lname,email, `password`,Type_id,gender,phonenumber,major,date) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)"
-        val = (self.__fname,self.__lname ,self.__email,self.__password,2,self.__gender,self.__phoneNumber,self.__major,self.__date)    
-        self.__cursor.execute(sql, val)
-        self.__conn.commit()  
-        print("register_user")

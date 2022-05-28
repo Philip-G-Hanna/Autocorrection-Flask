@@ -38,9 +38,9 @@ class Courses:
         return result
 
     def course_questions(self, id):
-        sql = "SELECT * FROM questions_rawan WHERE course_id = %s"
+        sql1 = "SELECT * FROM questions_rawan WHERE course_id = %s"
         val = (id,)
-        self.__cursor.execute(sql, val)
+        self.__cursor.execute(sql1, val)
         result = self.__cursor.fetchall()
         self.__conn.commit()
         print("course_questions: ", result)
