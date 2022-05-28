@@ -1,5 +1,8 @@
-{%if utype == 1 %} {% include 'includes/student-navbar.html' %} {%elif utype == 2 %} {% include 'includes/instructor-navbar.html' %} {% endif %} {% extends 'layouts/userLayout.html' %} {% block title %}Instructor Profile{% endblock %} {% block content
-    %}
+{% include 'includes/instructor-navbar.html' %} 
+<br><br><br>
+{% extends 'layouts/userLayout.html' %}
+{% block title %}Instructor Courses{% endblock %} 
+{% block content%}   
 <!DOCTYPE html>
 <html>
 <meta charset="UTF-8">
@@ -15,8 +18,8 @@
 <meta name="page_type" content="np-template-header-footer-from-plugin">
 <link rel="stylesheet" href="static/css/nicepage.css" media="screen">
 <link rel="stylesheet" href="static/css/courses.css" media="screen">
-<script class="u-script" type="text/javascript" src="static/js/jquery.js" defer=""></script>
-<script class="u-script" type="text/javascript" src="static/js/nicepage.js" defer=""></script>
+<script class="u-script" type="text/javascript" src="../static/js/jquery.js" defer=""></script>
+<script class="u-script" type="text/javascript" src="../static/js/nicepage.js" defer=""></script>
 <meta name="generator" content="Nicepage 4.4.3, nicepage.com">
 <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
 
