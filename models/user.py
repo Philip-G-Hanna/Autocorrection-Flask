@@ -129,9 +129,14 @@ class User:
 
     def deletecourses(self,courseid):
         self.__courseid = courseid
-        sql2 = """DELETE from courses WHERE id=%s""" 
+        sql2 = "DELETE from courses WHERE id=%s"
         print(sql2)
         self.__cursor.execute(sql2, (self.__courseid))
-        result7 = self.__cursor.fetchall()
         self.__conn.commit()
-        return result7
+    
+
+    def deleteuser(self,id):
+        self.__id = id
+        sqldeleteuser = "DELETE FROM user WHERE id = %s"
+        self.__cursor.execute(sqldeleteuser, (self.__id,))
+        self.__conn.commit()

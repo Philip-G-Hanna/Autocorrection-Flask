@@ -121,9 +121,14 @@ class UserController:
         result3= self.__user.getfaculty()
         return render_template('adminuser.html',result3= result3)
 
-    def userType(self):
-        result6= self.__user.getuserType()
-        return render_template('adminuser.html',result6= result6,length=len(result6))
+    # def userType(self):
+    #     result6= self.__user.getuserType()
+    #     return render_template('adminuser.html',result6= result6,length=len(result6))
 
     def addinstructor(self):
         return render_template('addinstructor.html')
+
+    def removeuser(self, user_id):
+        print(user_id)
+        self.__user.deleteuser(user_id)
+        return redirect(url_for("adminuser"))

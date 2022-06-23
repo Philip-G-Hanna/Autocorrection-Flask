@@ -106,16 +106,14 @@ def admin_courses():
 def admin_messages():
     return userController.admin_messages()
 
+@app.route("/removeuser/<user_id>")
+def removeuser(user_id):
+    print("Mostafa", user_id)
+    return userController.removeuser(user_id)
 
-
-    
 @app.route("/adminuser")
 def userType():
-    return userController.userType()
-    
-
-
-    
+    return userController.adminuser()
 
 @app.route("/addinstructor", methods=['POST', 'GET'])
 def addinstructor():
@@ -128,4 +126,4 @@ def logout():
 
 
 if __name__ == "__main__":
-    app.run(port=4000)
+    app.run(debug=True)

@@ -21,14 +21,13 @@
             <td>Major</td>
             <td>Mjor ID</td>
             <td>Birthdate</td>
-
+            <td>Delete</td>
         </tr>
     </thead>
 
     </thead>
     <tbody class="u-table-body">
         {%for i in range(0, length)%}
-
 
         <tr style="height: 44px;">
             <td class="u-border-1 u-border-grey-30 u-table-cell">{{result5[i][0]}}</td>
@@ -43,6 +42,7 @@
             <td class="u-border-1 u-border-grey-30 u-table-cell">{{result5[i][9]}}</td>
             <td class="u-border-1 u-border-grey-30 u-table-cell">{{result5[i][10]}}</td>
             <td class="u-border-1 u-border-grey-30 u-table-cell">{{result5[i][11]}}</td>
+            <td><a href="removeuser/{{result5[i][0]}}">Remove</a></td>
         </tr>
 
         {%endfor%}
