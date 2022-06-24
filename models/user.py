@@ -134,7 +134,7 @@ class User:
         print(sql2)
         self.__cursor.execute(sql2, (self.__courseid))
         self.__conn.commit()
-        return Result
+        return result7
 
     def register_instructor(self, fname,lname,email, password):
         self.__fname = fname
