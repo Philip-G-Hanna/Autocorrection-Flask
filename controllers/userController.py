@@ -127,3 +127,8 @@ class UserController:
         if request.method == "POST":
             self.__user.register_instructor(request.form['fname'], request.form['lname'], request.form['email'], request.form['password'])
         return render_template('addinstructor.html')
+
+    def removeuser(self, user_id):
+        print(user_id)
+        self.__user.deleteuser(user_id)
+        return redirect(url_for("adminuser"))

@@ -134,7 +134,7 @@ class User:
         print(sql2)
         self.__cursor.execute(sql2, (self.__courseid))
         self.__conn.commit()
-        return result7
+        # return result7
 
     def register_instructor(self, fname,lname,email, password):
         self.__fname = fname
@@ -153,4 +153,10 @@ class User:
         sql = "INSERT INTO questions (text,modelanswer) VALUES ( %s, %s)"
         val = ("text","modelanswer")    
         self.__cursor.execute(sql, val)
+        self.__conn.commit()
+
+    def deleteuser(self,id):
+        self.__id = id
+        sqldeleteuser = "DELETE FROM user WHERE id = %s"
+        self.__cursor.execute(sqldeleteuser, (self.__id,))
         self.__conn.commit()
