@@ -17,3 +17,4 @@ class Assignment:
         self.__cursor.execute(sql, val)
         self.__conn.commit()  
         print("__init__")
+        

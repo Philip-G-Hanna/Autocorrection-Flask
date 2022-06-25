@@ -6,11 +6,13 @@ from models.classAssignments import classAssignments
 from models.user import User
 from models.transcript import transcript
 from models.contacts import Contacts
+from models.courses import Courses
 
 class UserController:
     __user = User()
     __transcript = transcript()
     __classAssignments = classAssignments()
+    __courses = Courses()
     def signin(self):
         msg = ''
         if request.method == "POST":
@@ -87,10 +89,11 @@ class UserController:
         return render_template("instructor_feedback.html", fn=self.__user.getFname(),ln=self.__user.getLname(), utype=self.__user.getType())    
     
 
-    def questionbank(self): 
-        result6= self.__classAssignments.getQuestionText()
-        result5= self.__classAssignments.getQuestionModelAnswer()
-        return render_template("questionbank.html", result6= result6,result5= result5)
+    def questionbank(self):
+        if request.method == "POST":
+            self.__classAssignments.addQuestionModelAnswer(request.form['coursename'],request.form['txt'], request.form['modelanswer'], request.form['type'], request.form['number'])
+        result=self.__courses.read_courses()
+        return render_template("questionbank.html",result=result,length=len(result), )
     
     def transcript(self):
         result=self.__transcript.transcript(session['user_id'])

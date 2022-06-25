@@ -28,7 +28,7 @@ class Questions:
     def getStudentAnswer(self):
         return self.__studentanswer
 
-    def getData(self, qid, title, score,studentanswer):
+    def getData(self, qid, title, score,studentanswer,):
         self.__questionid = qid
         self.__questiontitle = title
         self.__score = score
