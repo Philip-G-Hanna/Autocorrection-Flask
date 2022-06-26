@@ -118,6 +118,10 @@ def userType():
 @app.route("/addinstructor", methods=['POST', 'GET'])
 def addinstructor():
     return userController.addinstructor()
+
+@app.route("/trouble")
+def trouble():
+    return userController.trouble()
     
 @app.route("/logout")
 def logout():

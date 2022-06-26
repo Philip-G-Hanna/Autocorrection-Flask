@@ -18,10 +18,11 @@
             </a>
             <a href="{{url_for('index')}}" class="w3-bar-item w3-button"><i class="fa fa-home "></i> HOME</a>
             <a href="{{url_for('courses')}}" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> Courses</a>
-            <a href="{{url_for('transcript')}}" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-graduation-cap"></i> Transcript</a>
+            <!--  <a href="{{url_for('transcript')}}" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-graduation-cap"></i> Transcript</a> -->
             <a href="{{url_for('profile')}}" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> Profile</a>
             <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i>CONTACT</a>
             <a href="{{url_for('logout')}}" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> Log out</a>
+
         </div>
     </div>
     {% block content %}{% endblock %}

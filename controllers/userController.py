@@ -127,3 +127,7 @@ class UserController:
         if request.method == "POST":
             self.__user.register_instructor(request.form['fname'], request.form['lname'], request.form['email'], request.form['password'])
         return render_template('addinstructor.html')
+
+   
+    def trouble(self):
+        return render_template("trouble.html")

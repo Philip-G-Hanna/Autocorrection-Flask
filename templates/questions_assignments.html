@@ -1,13 +1,11 @@
-{% include 'includes/student-navbar.html' %}
+{% include 'includes/student-navbar.html' %} {% extends 'layouts/userLayout.html' %} {% block title %}Assignment{% endblock %} {% block content %}
 
-{% extends 'layouts/userLayout.html' %}
-{% block title %}Assignment{% endblock %}
-
-{% block content %}
 <head>
-    
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/Quizes.css') }}"> <!-- hena by linked styling bt3 sign up -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar_styles.css') }}"> <!-- hena by linked el navbar-->
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Quizes.css') }}">
+    <!-- hena by linked styling bt3 sign up -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar_styles.css') }}">
+    <!-- hena by linked el navbar-->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -18,7 +16,7 @@
     <script class="u-script" type="text/javascript" src="{{ url_for('static', filename='js/jquery.js') }}" defer=""></script>
     <script class="u-script" type="text/javascript" src="{{ url_for('static', filename='js/nicepage.js') }}" defer=""></script>
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
-    
+
 </head>
 
 <body>
@@ -29,27 +27,27 @@
         <div class="title">
             <div class="u-clearfix u-sheet u-sheet-1">
                 <h2 class="u-text u-text-default u-text-1">
-                    <a href="https://moodle.miuegypt.edu.eg/mod/forum/view.php?id=21883" class="aalink u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-custom-color-1 u-btn-1"><i class="fa fa-question"></i> If you have any Trouble?</a>
-        
+                    <a href="{{url_for('trouble')}}" class="aalink u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-custom-color-1 u-btn-1"><i class="fa fa-question"></i> If you have any Trouble?</a>
+
                 </h2>
             </div>
-        <form class="w-full px-8" method="POST" action=".">
-            {% for question in questions %}
+            <form class="w-full px-8" method="POST" action=".">
+                {% for question in questions %}
                 <div class="py-2 my-2 px-4 bg-gray-200 rounded-md hover:bg-gray-300">
-                <p class="text-xl" >
-                    {{question[2]}}
-                </p>
-               
-                <h2 type="hidden" name="question_id" value="{{question[0]}}">
-                <input type="hidden" name="refrance_ans" value="{{question[3]}}">
-                <textarea name="answer" id="" cols="30" rows="10"></textarea>
+                    <p class="text-xl">
+                        {{question[2]}}
+                    </p>
+
+                    <h2 type="hidden" name="question_id" value="{{question[0]}}">
+                        <input type="hidden" name="refrance_ans" value="{{question[3]}}">
+                        <textarea name="answer" id="" cols="30" rows="10"></textarea>
                 </div>
-            
-          {% endfor %}
-            <button name="submit" class="py-2 px-8 text-white bg-green-500 hover:bg-green-700 active:bg-green-400">
+
+                {% endfor %}
+                <button name="submit" class="py-2 px-8 text-white bg-green-500 hover:bg-green-700 active:bg-green-400">
                 submit
             </button>
-        </form>
+            </form>
         </div>
     </div>
 </body>

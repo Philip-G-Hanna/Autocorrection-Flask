@@ -1,38 +1,35 @@
-{% include 'includes/student-navbar.html' %}
+{% include 'includes/student-navbar.html' %} {% extends 'layouts/userLayout.html' %} {% block title %}Courses{% endblock %} {% block content %}
 
-{% extends 'layouts/userLayout.html' %}
-{% block title %}Courses{% endblock %}
-
-{% block content %}
 <head>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/courses.css') }}" media="screen">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/courses_styles.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/nicepage.css') }}" media="screen">
-  <link rel="stylesheet"  href="{{ url_for('static', filename='css/Home.css') }}" media="screen">
-  <script class="u-script" type="text/javascript" src="{{ url_for('static', filename='js/jquery.js') }}" defer=""></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/courses.css') }}" media="screen">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/courses_styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/nicepage.css') }}" media="screen">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Home.css') }}" media="screen">
+    <script class="u-script" type="text/javascript" src="{{ url_for('static', filename='js/jquery.js') }}" defer=""></script>
     <script class="u-script" type="text/javascript" src="{{ url_for('static', filename='js/nicepage.js') }}" defer=""></script>
-  <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
 </head>
- <body>
-    <section class="u-clearfix u-section-1"  id="sec-787a">
-        <div class="u-align-left u-clearfix u-sheet u-sheet-1" >
-          <h2 class="u-text u-text-default u-text-1">
-            <a class="aalink u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-custom-color-1 u-btn-1" onclick="" href="https://moodle.miuegypt.edu.eg/mod/forum/view.php?id=21883">Announcements</a>
-          </h2><span class="u-file-icon u-icon u-icon-1"><img src="static/images/39.png" alt=""></span>
-          <div style="display:flex;width:100%;flex-wrap:wrap;">
-            {% for course in courses %}
-          <div class="u-container-style u-grey-10 u-group u-preserve-proportions u-radius-15 u-shape-round u-group-1" style="margin:10px;">
-            <div class="u-container-layout u-container-layout-1"><span class="u-file-icon u-icon u-icon-2"><img src="static/images/45.png" alt=""></span>
-              <div class="u-align-center u-container-style u-custom-color-1 u-group u-radius-30 u-shape-round u-group-2">
-                <div class="u-container-layout">
-                <a href="coursechoice/{{course[0]}}">
-                  <h2 class="u-text u-text-default u-text-2"> {{course[1]}}</h2>
-                  </a>
+
+<body>
+    <section class="u-clearfix u-section-1" id="sec-787a">
+        <div class="u-align-left u-clearfix u-sheet u-sheet-1">
+            <h2 class="u-text u-text-default u-text-1">
+                <a class="aalink u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-custom-color-1 u-btn-1" onclick="" href="{{url_for('trouble')}}">Announcements</a>
+            </h2><span class="u-file-icon u-icon u-icon-1"><img src="static/images/39.png" alt=""></span>
+            <div style="display:flex;width:100%;flex-wrap:wrap;">
+                {% for course in courses %}
+                <div class="u-container-style u-grey-10 u-group u-preserve-proportions u-radius-15 u-shape-round u-group-1" style="margin:10px;">
+                    <div class="u-container-layout u-container-layout-1"><span class="u-file-icon u-icon u-icon-2"><img src="static/images/45.png" alt=""></span>
+                        <div class="u-align-center u-container-style u-custom-color-1 u-group u-radius-30 u-shape-round u-group-2">
+                            <div class="u-container-layout">
+                                <a href="coursechoice/{{course[0]}}">
+                                    <h2 class="u-text u-text-default u-text-2"> {{course[1]}}</h2>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
+                {% endfor %}
             </div>
-          </div>
-          {% endfor %}
-          </div>
- </body>
+</body>
 {% endblock %}
