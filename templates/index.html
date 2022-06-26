@@ -1,131 +1,126 @@
-{%if utype == 1 %}
-    {% include 'includes/student-navbar.html' %}
+{%if utype == 1 %} {% include 'includes/student-navbar.html' %} {%elif utype == 2 %} {% include 'includes/instructor-navbar.html' %} {%else %} {% include 'includes/default-navbar.html' %} {% endif %} {% extends 'layouts/userLayout.html' %} {% block title
+%}Home{% endblock %} {% block content %}
 
-{%elif utype == 2 %}
-    {% include 'includes/instructor-navbar.html' %}
-
-{%else %}
-    {% include 'includes/default-navbar.html' %}
-{% endif %}
-
-
-{% extends 'layouts/userLayout.html' %}
-{% block title %}Home{% endblock %}
-
-{% block content %}
-
+<style>
+    .bgimg-1 {
+        background-image: url("static/images/17.png");
+        min-height: 800px;
+        background-size: cover;
+        -webkit-background-size: cover !important;
+        -moz-background-size: cover !important;
+        -o-background-size: cover;
+    }
+</style>
 <!-- First Parallax Image with Logo Text -->
 <div class="bgimg-1 w3-display-container w3-opacity-min" style="margin-top: 10%;" id="home">
     <div class="w3-display-middle" style="white-space:nowrap;">
-      <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">CORRECTA </span>
+        <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">CORRECTA </span>
     </div>
-  </div>
-  
-  <!-- Container (About Section) -->
-  <div class="w3-content w3-container w3-padding-64" id="about">
+</div>
+
+<!-- Container (About Section) -->
+<div class="w3-content w3-container w3-padding-64" id="about">
     <h3 class="w3-center">ABOUT US</h3>
     <p class="w3-center"><em>AutoCorrection for Subjective Question</em></p>
     <p> Grading short answer questions has been a pain recently. This webcite's major goal is to create an automatic correction model for the topic question, which will make the process of checking answer essay questions easier. Students can take tests online,
-             and the system will calculate the outcomes and provide an administrator with a record.</p>
+        and the system will calculate the outcomes and provide an administrator with a record.</p>
     <div class="w3-row">
-      <div class="w3-col m6 w3-center w3-padding-large">
-        <img src="static/images/19.jpg" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Photo of Me" width="500" height="333">
-      </div>
-  
-      <!-- Hide this text on small devices -->
-      <div class="w3-col m6 w3-hide-small w3-padding-large">
-        <p> Our system is designed to correct subjective and essay questions automatically. 
-           It acts as a co-assistant to the professor while correcting these types of questions.</p>
-      </div>
+        <div class="w3-col m6 w3-center w3-padding-large">
+            <img src="static/images/19.jpg" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Photo of Me" width="500" height="333">
+        </div>
+
+        <!-- Hide this text on small devices -->
+        <div class="w3-col m6 w3-hide-small w3-padding-large">
+            <p> Our system is designed to correct subjective and essay questions automatically. It acts as a co-assistant to the professor while correcting these types of questions.</p>
+        </div>
     </div>
     <p class="w3-large w3-center w3-padding-16">Our Courses: most popular courses</p>
     <p class="w3-wide"><i class="fa fa-desktop"></i>Software Engenieering</p>
     <div class="w3-light-grey">
-      <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:90%">90%</div>
+        <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:90%">90%</div>
     </div>
     <p class="w3-wide"><i class="fa fa-laptop"></i>Web Design</p>
     <div class="w3-light-grey">
-      <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:85%">85%</div>
+        <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:85%">85%</div>
     </div>
     <p class="w3-wide"><i class="fa fa-mobile"></i>Mobile Development</p>
     <div class="w3-light-grey">
-      <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:75%">75%</div>
+        <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:75%">75%</div>
     </div>
-  </div>
-  
-  <div class="w3-row w3-center w3-dark-grey w3-padding-16">
+</div>
+
+<div class="w3-row w3-center w3-dark-grey w3-padding-16">
     <div class="w3-quarter w3-section">
-      <span class="w3-xlarge">100+</span><br>
-      Students
-    </div>
-    <div class="w3-quarter w3-section">
-      <span class="w3-xlarge">10+</span><br>
-      Instructors
+        <span class="w3-xlarge">100+</span><br> Students
     </div>
     <div class="w3-quarter w3-section">
-      <span class="w3-xlarge">10+</span><br>
-      Courses
+        <span class="w3-xlarge">10+</span><br> Instructors
     </div>
     <div class="w3-quarter w3-section">
-      <span class="w3-xlarge">2400+</span><br>
-      Questions
+        <span class="w3-xlarge">10+</span><br> Courses
     </div>
-  </div>
-  
-  
-  
-  <!-- Modal for full size images on click-->
-  <div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
+    <div class="w3-quarter w3-section">
+        <span class="w3-xlarge">2400+</span><br> Questions
+    </div>
+</div>
+
+
+
+<!-- Modal for full size images on click-->
+<div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
     <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
     <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
-      <img id="img01" class="w3-image">
-      <p id="caption" class="w3-opacity w3-large"></p>
+        <img id="img01" class="w3-image">
+        <p id="caption" class="w3-opacity w3-large"></p>
     </div>
-  </div>
-  
-  <!-- Third Parallax Image with Portfolio Text -->
-  <div class="bgimg-3 w3-display-container w3-opacity-min">
+</div>
+
+<!-- Third Parallax Image with Portfolio Text -->
+<div class="bgimg-3 w3-display-container w3-opacity-min">
     <div class="w3-display-middle">
-       <span class="w3-xxlarge w3-text-white w3-wide">CONTACT</span>
+        <span class="w3-xxlarge w3-text-white w3-wide">CONTACT</span>
     </div>
-  </div>
-  
-  <!-- Container (Contact Section) -->
-  {% include 'includes/contact-us.html' %}
-  <!-- Footer -->
-  <footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
+</div>
+
+<!-- Container (Contact Section) -->
+{% include 'includes/contact-us.html' %}
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
     <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
     <div class="w3-xlarge w3-section">
-      <i class="fa fa-facebook-official w3-hover-opacity"></i>
-      <i class="fa fa-instagram w3-hover-opacity"></i>
-      <i class="fa fa-snapchat w3-hover-opacity"></i>
-      <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-      <i class="fa fa-twitter w3-hover-opacity"></i>
-      <i class="fa fa-linkedin w3-hover-opacity"></i>
+        <i class="fa fa-facebook-official w3-hover-opacity"></i>
+        <i class="fa fa-instagram w3-hover-opacity"></i>
+        <i class="fa fa-snapchat w3-hover-opacity"></i>
+        <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+        <i class="fa fa-twitter w3-hover-opacity"></i>
+        <i class="fa fa-linkedin w3-hover-opacity"></i>
     </div>
-  </footer>
-   
-  <script>
-  // Change style of navbar on scroll
-  window.onscroll = function() {myFunction()};
-  function myFunction() {
-      var navbar = document.getElementById("myNavbar");
-      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-          navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
-      } else {
-          navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
-      }
-  }
-  
-  // Used to toggle the menu on small screens when clicking on the menu button
-  function toggleFunction() {
-      var x = document.getElementById("navDemo");
-      if (x.className.indexOf("show") == -1) {
-          x.className += " show";
-      } else {
-          x.className = x.className.replace(" show", "");
-      }
-  }
-  </script>
-  
+</footer>
+
+<script>
+    // Change style of navbar on scroll
+    window.onscroll = function() {
+        myFunction()
+    };
+
+    function myFunction() {
+        var navbar = document.getElementById("myNavbar");
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+        } else {
+            navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+        }
+    }
+
+    // Used to toggle the menu on small screens when clicking on the menu button
+    function toggleFunction() {
+        var x = document.getElementById("navDemo");
+        if (x.className.indexOf("show") == -1) {
+            x.className += " show";
+        } else {
+            x.className = x.className.replace(" show", "");
+        }
+    }
+</script>
+
 {% endblock %}
