@@ -28,6 +28,28 @@ class Courses:
         print("course_details: ", result)
         return result
     
+
+
+    def course_questions_assigment(self, id):
+        sql1 = "SELECT * FROM questions_rawan WHERE course_id = %s and Type = %s"
+        val = (id,"Assigment")
+        self.__cursor.execute(sql1, val)
+        result = self.__cursor.fetchall()
+        self.__conn.commit()
+        print("course_questions: ", result)
+        return result
+
+
+    def course_questions_quiz(self, id):
+        # sql1 = "SELECT * FROM questions_rawan WHERE course_id = %s"
+        sql1 = "SELECT * FROM questions_rawan WHERE course_id = %s and Type = %s"
+        val = (id,"Quiz")
+        self.__cursor.execute(sql1, val)
+        result = self.__cursor.fetchall()
+        self.__conn.commit()
+        print("course_questions: ", result)
+        return result
+
     def course_choice_assignments(self, id):
         sql = "SELECT * FROM assignment WHERE course_id = %s"
         val = (id,)
@@ -37,14 +59,6 @@ class Courses:
         print("course_choice_assignment: ", result)
         return result
 
-    def course_questions(self, id):
-        sql1 = "SELECT * FROM questions_rawan WHERE course_id = %s"
-        val = (id,)
-        self.__cursor.execute(sql1, val)
-        result = self.__cursor.fetchall()
-        self.__conn.commit()
-        print("course_questions: ", result)
-        return result
 
     def course_choice_quizes(self, id):
         sql = "SELECT * FROM quizzes WHERE course_id = %s"
@@ -54,5 +68,3 @@ class Courses:
         self.__conn.commit()
         print("course_choice_quizes: ", result)
         return result
-
-    

@@ -51,8 +51,14 @@ def course_choice_quizes(course_id):
 
 @app.route("/coursechoice/assignments/assignment_question/<assignment_id>")
 def selected_assignment_question(assignment_id):
-
     return courseController.selected_assignment_question(assignment_id)
+
+
+@app.route("/coursechoice/quizes/quiz_question/<quiz_id>")
+def selected_quiz_question(quiz_id):
+    return courseController.selected_quiz_question(quiz_id)
+
+
 
 @app.route("/coursechoice/assignments/assignment_question/",methods=['POST'])
 def getdata():
