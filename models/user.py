@@ -1,3 +1,4 @@
+from mysqlx import Result
 from models.dbConnection import DatabaseConnection
 from flask import session
 class User:
@@ -133,7 +134,26 @@ class User:
         print(sql2)
         self.__cursor.execute(sql2, (self.__courseid))
         self.__conn.commit()
-    
+        # return result7
+
+    def register_instructor(self, fname,lname,email, password):
+        self.__fname = fname
+        self.__lname = lname
+        self.__email = email
+        self.__password = password
+      
+
+        sql = "INSERT INTO user (`fname`,lname,email, `password`,Type_id) VALUES (%s, %s, %s, %s, %s)"
+        val = (self.__fname,self.__lname ,self.__email,self.__password,2)    
+        self.__cursor.execute(sql, val)
+        self.__conn.commit()  
+        print("register_instructor")
+
+    def addquestion(self, text,modelanswer):
+        sql = "INSERT INTO questions (text,modelanswer) VALUES ( %s, %s)"
+        val = ("text","modelanswer")    
+        self.__cursor.execute(sql, val)
+        self.__conn.commit()
 
     def deleteuser(self,id):
         self.__id = id

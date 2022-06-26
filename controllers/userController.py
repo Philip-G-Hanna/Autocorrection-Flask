@@ -94,6 +94,8 @@ class UserController:
             self.__classAssignments.addQuestionModelAnswer(request.form['coursename'],request.form['txt'], request.form['modelanswer'], request.form['type'], request.form['number'])
         result=self.__courses.read_courses()
         return render_template("questionbank.html",result=result,length=len(result), )
+    def questionbank(self): 
+        return render_template("questionbank.html")
     
     def transcript(self):
         result=self.__transcript.transcript(session['user_id'])
@@ -129,6 +131,8 @@ class UserController:
     #     return render_template('adminuser.html',result6= result6,length=len(result6))
 
     def addinstructor(self):
+        if request.method == "POST":
+            self.__user.register_instructor(request.form['fname'], request.form['lname'], request.form['email'], request.form['password'])
         return render_template('addinstructor.html')
 
     def removeuser(self, user_id):
