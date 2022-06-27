@@ -68,3 +68,9 @@ class Courses:
         self.__conn.commit()
         print("course_choice_quizes: ", result)
         return result
+
+    def removecourse(self,id):
+        self.__id = id
+        sqldeletecourses = "DELETE FROM courses WHERE id = %s"
+        self.__cursor.execute(sqldeletecourses, (self.__id,))
+        self.__conn.commit()

@@ -114,8 +114,11 @@ def admin_messages():
 
 @app.route("/removeuser/<user_id>")
 def removeuser(user_id):
-    print("Mostafa", user_id)
     return userController.removeuser(user_id)
+
+@app.route("/removecourse/<course_id>")
+def removecourse(course_id):
+    return courseController.removecourse(course_id)
 
 @app.route("/adminuser")
 def userType():

@@ -34,3 +34,8 @@ class CourseController:
         assignments = self.__courses.course_choice_quizes(id)
         #model_answer = self.__courses.course_questions_quiz(id)
         return render_template("quizes2.html", assignments=assignments)
+
+    def removecourse(self, course_id):
+        print(course_id)
+        self.__courses.removecourse(course_id)
+        return redirect(url_for("admin_courses"))
